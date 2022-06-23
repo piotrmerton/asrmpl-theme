@@ -1,0 +1,39 @@
+// default variables 
+
+//theme global variables related to layout
+$sticky_offset: 1rem; //offset for sticky elements (ui-filters on category and meta "buy block" on product)
+
+
+
+//paths to assets - keep in mind that CSS will be inlined, so absolute paths are required. For some reason I couldn't get to work relative path with meta base href tag.
+$assetsPath: "//el-technika.com/wp-content/themes/eltechnika/assets/";
+$fontsPath: "//el-technika.com/wp-content/themes/eltechnika/assets/fonts";
+
+
+//colors
+$black: #272727;
+$silver: #F0F0F0;
+$darkred: #830825;
+$red: #990A2C;
+$yellow: #FBBA00;
+$salmon: #F28F4F;
+$lightblue: #349FD6;
+
+$text_silver: #535050;
+$text_silver_light: #C8C8C8;
+
+$viewport_width: 1650px;
+$viewport_padding: 1rem;
+
+$breakpoint_phone: 480px;
+$breakpoint_phone_big: 640px;
+$breakpoint_tablet-portrait: 768px;
+$breakpoint_mobile: 960px;
+$breakpoint_tablet: 1024px;
+$breakpoint_desktop: 1180px;
+$breakpoint_hd: 1280px;
+$breakpoint_laptop: 1366px;
+$breakpoint_laptop_big: 1440px;
+$breakpoint_viewport: 1650px;
+$breakpoint_fullhd: 1920px;
+$breakpoint_wqhd: 2560px;

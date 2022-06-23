@@ -1,0 +1,83 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--history">
+
+        <section class="history__banner banner banner--history">
+            <div class="banner__content text--white text--center">
+                <figure class="club__logo">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/crest/asroma.svg" width="128" height="128" />
+                </figure>                
+                <h1 class="header--no-margin">Historia klubu</h1>
+            </div>
+
+            <figure class="banner__cover cover">
+                <picture>
+                    <source srcset="{{ theme.link }}/assets/img/banner/history.webp" type="image/webp">
+                    <source srcset="{{ theme.link }}/assets/img/banner/history.jpg" type="image/jpeg"> 
+                    <img loading="lazy" src="{{ theme.link }}/assets/img/banner/history.jpg" />
+                </picture>            
+            </figure>
+        </section>
+
+
+
+        <section class="page__layout">
+            
+                <main class="layout__main">
+
+                    <div class="timeline__title title--start">
+                        <span class="label">{{ __('Rok założenia', 'theme') }}</span>
+                        <h2 class="header--no-margin">1927</h2>
+                    </div>
+
+                    <ul class="posts__list list--history" style="background-image: url('{{ theme.link }}/assets/img/timeline.png')">
+                        {% for post in posts %}
+                            
+                        <li class="{% if class %}{{ class }} {% endif %}item--post">
+                            <div class="item__content">
+                                <a href="{{ post.link }}">
+                                    {% if post.thumbnail %}
+                                        {% include "partials/post/post-cover.twig" with { 'class' : 'post__cover', 'image_size' : image_size ? image_size : 'cover' } %}
+                                    
+                                    {% elseif show_placeholder %}
+                                        <figure class="post__cover cover cover--overlay">
+                                            <picture>
+                                                <source srcset="{{ theme.link }}/assets/img/post-cover-placeholder.webp" type="image/webp">
+                                                <source srcset="{{ theme.link }}/assets/img/post-cover-placeholder.jpg" type="image/jpeg">
+                                                <img loading="lazy" src="{{ theme.link }}/assets/img/post-cover-placeholder.jpg" />
+                                            </picture>
+                                        </figure>
+                                    {% endif %}
+                                    <div class="post__content">
+                                        <h3 class="post__title">{{ post.title }}</h3>                                       
+                                        <p class="post__excerpt">{{ post.post_excerpt|truncate(50) }}</p>        
+                                    </div>
+                                </a>
+                                <figure class="item__trail"></figure>                                
+                            </div>
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+
+                    <div class="timeline__title title--end">
+                        <span class="label">{{ __('Dziś', 'theme') }}</span>
+                        <h2 class="header--no-margin">{{ 'now'|date('Y') }}</h2>
+                    </div>
+
+                </main>     
+
+    
+        </section><!-- /page__layout -->
+
+    </div>
+    
+{% endblock %}
+
+
+{% block css_footer_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ theme.path }}/assets/css/pages/history.css" type="text/css" />
+{% endblock %}

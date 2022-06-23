@@ -1,0 +1,45 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--archive">
+        
+        <section class="content__title text--white">
+            <h1>{{ __('Terminarz sezonu', 'theme') }} {{ current_season.name }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    {% if posts is not empty %}
+
+                       {% include "partials/schedule/schedule-nav.twig" %}
+
+                       {% include "partials/schedule/schedule-list.twig" with {'games' : schedule.games } %}
+
+                    {% else %}
+
+                        <div class="ui-message message--info">
+                            <p>{{ __('Brak meczów.', 'theme') }}</p>
+                        </div>
+
+                    {% endif %}                    
+
+                </main>
+
+                <div class="layout__side">
+                    <div class="side__block">
+                        {% include "blocks/block-posts.twig" %}
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

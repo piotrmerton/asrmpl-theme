@@ -1,0 +1,39 @@
+
+{% if show_section_social is not defined or show_section_social == true %}
+    {% include "content/section/section-social.twig" with { 'show_widgets' : is_home ? true : false } %}
+{% endif %}
+
+<footer>
+
+
+
+    <section class="footer__section section--branding">
+        <div class="footer__logo logo">
+            <a href="{{ site.url }}" title="{{ site.description }}">
+                <figure>
+                    {{ source('assets/svg/logo.svg', ignore_missing = false) }}
+                </figure>  
+            </a>           
+        </div>
+
+        {% include "blocks/block-social.twig" with { 'class' : 'block--footer' } %}
+
+        {% include 'components/nav.twig' with { 'nav' : footer_nav, 'class' : 'footer__nav nav--footer' } %}
+
+    </section>
+
+    <section class="footer__section section--credits">
+    
+        <p class="footer__copyrights">{{ footer.copyrights }}</p>
+        <p class="footer__desc">{{ footer.desc }}</p>
+        <p class="footer__disclaimer">{{ footer.disclaimer }}</p>
+
+        <p class="footer__credits">
+            {{ __('Projekt i realizacja')}}:
+            <a href="//futuresystems.pl" title="{{ __('Sklepy i strony internetowe Gliwice')}}">{{ __('agencja reklamowa')}}</a> 
+            <a href="//futuresystems.pl" title="{{ __('Projektowanie i wdrażanie systemów e-commerce')}}">futuresystems.pl</a>
+        </p>
+
+    </section>
+
+</footer>

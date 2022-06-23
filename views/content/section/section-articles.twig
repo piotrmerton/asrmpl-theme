@@ -1,0 +1,31 @@
+<section class="content__section section-articles">
+    
+        <div class="section__grid grid--two-columns">
+
+            <div class="grid__item item--articles">
+
+                <div class="section__header">
+                    <h3 class="header--with-border">
+                        <a href="{{ links.articles }}">{{ __('Felietony', 'theme') }}</a>
+                    </h3>
+                </div>
+
+                {% include "blocks/block-posts.twig" with { 'block_title' : false, 'category_id' : 40, 'grid' : 'horizontal', 'limit' : 5  } %}
+
+            </div>
+
+            <div class="grid__item item--interviews">
+
+                <div class="section__header">
+                    <h3 class="header--with-border">
+                        <a href="{{ links.interviews }}">{{ __('Wywiady', 'theme') }}</a>
+                    </h3>
+                </div>
+
+                {% include "blocks/block-posts.twig" with { 'block_title' : false, 'category_id' : 41, 'grid' : 'horizontal', 'limit' : 5  } %}
+
+            </div>
+
+        </div>
+    
+</section>

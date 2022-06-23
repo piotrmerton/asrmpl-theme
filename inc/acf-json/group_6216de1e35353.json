@@ -1,0 +1,59 @@
+{
+    "key": "group_6216de1e35353",
+    "title": "Rozgrywki",
+    "fields": [
+        {
+            "key": "field_6216de21a12a7",
+            "label": "Logo rozgrywek",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Logo rozgrywek w formacie 1:1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "url",
+            "preview_size": "small",
+            "min_width": 128,
+            "min_height": 128,
+            "min_size": "",
+            "max_width": 480,
+            "max_height": 480,
+            "max_size": "",
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "competition"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1645708570
+}

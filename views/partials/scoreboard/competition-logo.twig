@@ -1,0 +1,7 @@
+<figure class="competition__logo">
+    <picture>
+        <source srcset="{{ competition.logo|towebp }}" type="image/webp">  
+        <source srcset="{{ competition.logo }}" type="image/jpeg">  
+        <img loading="lazy" src="{{ competition.logo }}" width="64" height="64" alt="{{ competition.name }}" />
+    </picture>
+</figure>

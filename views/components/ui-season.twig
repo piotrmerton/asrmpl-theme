@@ -1,0 +1,26 @@
+<form id="ui-season" action="{{ current_url }}" method="get">
+    <select name="season" class="ui-select">
+        {% for season in seasons %}
+
+            {% if queried_season %}
+
+                {% if queried_season.slug == season.slug %}
+                    <option value="{{ season.slug }}" selected>{{ season.name }}</option>
+                {% else %}
+                    <option value="{{ season.slug }}">{{ season.name }}</option>
+                {% endif %}
+
+            {% else %}
+
+                {% if current_season.slug == season.slug %}
+                    <option value="{{ season.slug }}" selected>{{ season.name }}</option>
+                {% else %}
+                    <option value="{{ season.slug }}">{{ season.name }}</option>                    
+                {% endif %}
+
+            {% endif %}
+
+            
+        {% endfor %}
+    </select>
+</form>

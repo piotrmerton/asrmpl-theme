@@ -1,0 +1,20 @@
+<ul class="posts__list{% if class %} {{ class }}{% endif %}">
+    {% for post in posts %}
+        
+        {% if date is not defined or date != post.date() %}
+            {% set has_archive_date = true %}
+            <li class="list__item item--date">
+                <h3 class="header--with-border">{{ post.date() }}</h3>
+            </li>                        
+
+        {% endif %}
+
+        {% include "partials/item-post.twig" with {
+            'class' : has_archive_date ? 'list__item item--first-from-date' : 'list__item', 
+            'preview_length' : 100} 
+        %}
+
+        {% set date = post.date() %}
+        {% set has_archive_date = false %}
+    {% endfor %}
+</ul>

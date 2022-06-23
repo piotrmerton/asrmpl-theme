@@ -1,0 +1,25 @@
+{% if socialmedia %}
+    <ul class="player__socialmedia">
+        {% if socialmedia.facebook %}
+            <li class="list__item item--facebook">
+                <a href="{{ socialmedia.facebook }}" title="{{ __('Zobacz profil zawodnika na Facebooku', 'theme') }}">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/facebook.svg" />
+                </a>
+            </li>
+        {% endif %}
+        {% if socialmedia.instagram %}
+            <li class="list__item item--instagram">
+                <a href="{{ socialmedia.instagram }}" title="{{ __('Zobacz profil zawodnika na Instagramie', 'theme') }}">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/instagram.svg" />
+                </a>
+            </li>
+        {% endif %}
+        {% if socialmedia.twitter %}
+            <li class="list__item item--twitter">
+                <a href="{{ socialmedia.twitter }}" title="{{ __('Zobacz profil zawodnika na Twitterze', 'theme') }}">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/twitter.svg" />
+                </a>
+            </li>
+        {% endif %}                                                
+    </ul>
+{% endif %}

@@ -1,0 +1,35 @@
+.block-social {
+
+    display: flex;
+    justify-content: center;
+
+    .ui-ico {
+        margin: 0 .75rem;
+        svg {
+            height: 2rem;
+        }
+        .svg__ico {
+            fill: #fff;
+        }
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    .label {
+        display: none;
+    }
+
+    &.block--header {
+        margin-left: 1rem;
+        .ui-ico {
+            margin: 0 .5rem;
+        }
+
+        @media (max-width: $breakpoint_hd) {
+            display: none;
+        }
+    }
+}

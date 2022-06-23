@@ -1,0 +1,23 @@
+<section class="content__section section-videos">
+    
+    <div class="section__body">
+        <div class="section__title text--white">
+            <h2>{{ __('Najnowsze wideo', 'theme') }}</h2>
+        </div>
+
+        <div class="video-list"></div>
+
+        
+        <a class="button button--white button--center" href="{{ links.videos }}">{{ __('Zobacz pozostałe filmy', 'theme') }}</a>
+        
+    </div>
+
+    <figure class="section__cover cover">
+        <picture>
+            <source srcset="{{ theme.link }}/assets/img/cover/section-articles.webp" type="image/webp">
+            <source srcset="{{ theme.link }}/assets/img/cover/section-articles.jpg" type="image/jpeg">             
+            <img loading="lazy" src="{{ theme.link }}/assets/img/cover/section-articles.jpg" />
+        </picture>
+    </figure>
+    
+</section>

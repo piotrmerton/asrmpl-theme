@@ -1,0 +1,82 @@
+
+<table class="standings-table">
+
+    <thead>
+        <tr>
+            <th class="position">
+                <span class="label label--desktop">{{ __('Pozycja', 'theme') }}</span>
+            </th>
+            <th class="team">
+                <span class="label label--desktop">{{ __('Klub', 'theme') }}</span>
+            </th>
+            <th class="games">
+                <span class="label label--desktop">{{ __('Mecze', 'theme') }}</span>
+                <span class="label label--mobile">{{ __('M', 'theme') }}</span>
+            </th>
+            
+            {% if full_table %}
+                <th class="wins">
+                    <span class="label label--desktop">{{ __('Zwycięstwa', 'theme') }}</span>
+                    <span class="label label--mobile">{{ __('Z', 'theme') }}</span>
+                </th>
+                <th class="draws">
+                    <span class="label label--desktop">{{ __('Remisy', 'theme') }}</span>
+                    <span class="label label--mobile">{{ __('R', 'theme') }}</span>
+                </th>
+                <th class="loses">
+                    <span class="label label--desktop">{{ __('Porażki', 'theme') }}</span>
+                    <span class="label label--mobile">{{ __('P', 'theme') }}</span>
+                </th>                
+            {% endif %}
+            
+            <th class="goals">
+                <span class="label label--desktop">{{ __('Bramki', 'theme') }}</span>
+                <span class="label label--mobile">{{ __('Br.', 'theme') }}</span>
+            </th>
+            
+            {% if full_table %}<th class="goal_diff">{{ __('Różnica', 'theme') }}</th>{% endif %}
+
+            <th class="points">
+                <span class="label label--desktop">{{ __('Punkty', 'theme') }}</span>
+                <span class="label label--mobile">{{ __('Pkt.', 'theme') }}</span>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for row in standings %}
+
+        <tr{% if row.team.name == "AS Roma" %} class="highlight"{% endif %}>
+
+            <td class="position">{{ row.rank }}.</td>
+            <td class="team">
+                <div>
+                    <img src="{{ row.crest }}" />
+                    <span class="label">{{ row.team.name }}</span>
+                </div>
+            </td>
+            
+            <td class="played">{{ row.all.played }}</td>
+
+            {% if full_table %}
+                <td class="wins">{{ row.all.win }}</td>
+                <td class="draws">{{ row.all.draw }}</td>
+                <td class="loses">{{ row.all.lose }}</td>
+            {% endif %}
+
+            <td class="goals">{{ row.all.goals.for }}-{{ row.all.goals.against }}</td>
+
+            {% if full_table %}
+                <td class="goal_diff">{{ row.goalsDiff }}</td>
+            {% endif %}
+
+            <td class="points">{{ row.points }}</td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>

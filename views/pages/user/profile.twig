@@ -1,0 +1,28 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--profile">
+
+        
+        <section class="content__title post__title text--white">
+            <h1>{{ __('Ustawienia konta', 'theme') }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    <div class="ui-user">
+                        {{ page.content }}
+                    </div>
+
+                </main>
+            
+            
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

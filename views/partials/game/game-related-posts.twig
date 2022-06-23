@@ -1,0 +1,12 @@
+{% if has_related_posts %}
+    {% include "blocks/block-posts.twig" with { 'grid' : grid ? grid : 'vertical', 'block_title' : __('Powiązane wpisy', 'theme'), 'game_id' : post.id } %}
+{% else %}
+
+    {% if related_tag %}
+        {% include "blocks/block-posts.twig" with { 'grid' : grid ? grid : 'vertical', 'tag_id' : related_tag.term_id, 'current_post_id' : match_report.id, 'block_title' : game.competition.name ~ __(' - wiadomości', 'theme') } %}
+    {% else %}
+        {% include "blocks/block-posts.twig" with { 'grid' : grid ? grid : 'vertical', 'current_post_id' : match_report.id, 'block_title' : __('Najnowsze wiadomości', 'theme') } %}
+    {% endif %}
+
+
+{% endif %}

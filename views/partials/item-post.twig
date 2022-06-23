@@ -1,0 +1,35 @@
+<li class="{% if class %}{{ class }} {% endif %}item--post">
+    <a href="{{ post.link }}">
+
+        {% if post.thumbnail %}
+            {% include "partials/post/post-cover.twig" with { 'class' : 'post__cover', 'image_size' : image_size ? image_size : 'cover' } %}
+        
+        {% elseif show_placeholder %}
+            <figure class="post__cover cover cover--overlay">
+                <picture>
+                    <source srcset="{{ theme.link }}/assets/img/post-cover-placeholder.webp" type="image/webp">
+                    <source srcset="{{ theme.link }}/assets/img/post-cover-placeholder.jpg" type="image/jpeg">
+                    <img loading="lazy" src="{{ theme.link }}/assets/img/post-cover-placeholder.jpg" />
+                </picture>
+            </figure>
+        {% endif %}
+
+        <div class="post__content">
+
+            <section class="post__data">
+                <h3 class="post__title">{{ post.title }}</h3>
+                <p class="post__excerpt">{{ post.post_excerpt|truncate(preview_length ? preview_length : 50, true) }}</p>        
+            </section>
+
+            {% include "partials/post/post-meta.twig" %}
+
+            {% if show_cta %}
+                <span class="post__cta button button--compact button--white">{{ __('Przeczytaj całość', 'theme') }}</span>
+            {% endif %}
+
+            {% if post_label %}
+                <span class="post__label">{{ post_label }}</span>
+            {% endif %}
+        </div>
+    </a>
+</li>

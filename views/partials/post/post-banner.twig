@@ -1,0 +1,17 @@
+<section class="post__banner banner banner--post">
+
+    <div class="banner__content">
+            
+        <h1 class="post__title text--white">{{ post.title }}</h1>
+
+        {% include "partials/post/post-meta.twig" with { 'show_full_meta' : true, 'class' : 'meta--full' } %}
+        
+    </div>
+
+    {% if post_label %}
+        <span class="post__label">{{ post_label }}</span>
+    {% endif %} 
+
+    {% include "partials/post/post-cover.twig" with { 'class' : 'banner__cover' } %}
+
+</section>

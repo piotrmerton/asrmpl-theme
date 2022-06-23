@@ -1,0 +1,18 @@
+{#
+
+	Flexible content via ACF
+
+	https://www.advancedcustomfields.com/resources/flexible-content/
+	https://timber.github.io/docs/guides/acf-cookbook/#flexible-content-field
+
+	Remember not to  call meta on the inner field - call the meta method once!
+	https://timber.github.io/docs/guides/acf-cookbook/#troubleshooting-repeaters
+
+#}
+
+
+{% for section in content %}
+
+	{% include 'content/' ~ section.acf_fc_layout|replace({'_': '-'}) ~ '.twig' %}
+
+{% endfor %}

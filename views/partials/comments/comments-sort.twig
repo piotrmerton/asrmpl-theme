@@ -1,0 +1,11 @@
+{% if comments_count > 1 and is_shoutbox == false %}
+    
+    <div class="comments__sort">
+        <form action="{{ link }}#comments" method="get">
+            <select name="comments_order" class="ui-select">
+                <option value="asc"{%if comments_order == "asc" or comments_order == false %} selected{% endif %}>{{ __('Od najstarszego', 'theme') }}</option>
+                <option value="desc" {%if comments_order == "desc" %} selected{% endif %}>{{ __('Od najnowszego', 'theme') }}</option>
+            </select>
+        </form>
+    </div>
+{% endif %}

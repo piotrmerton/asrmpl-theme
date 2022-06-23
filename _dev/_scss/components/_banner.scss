@@ -1,0 +1,105 @@
+.banner {
+    position: relative;
+    display: grid;
+    align-items: center;
+    background: $black;
+    min-height: 45rem;
+    
+
+
+    .banner__content {
+        position: relative;
+        z-index: 2; //above cover
+        padding: 2rem;
+        
+    }
+
+    .banner__cover {
+
+        //components/cover.scss override
+        &.cover--overlay {
+            &::after {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255,255,255,0) 100%);
+            }
+        }
+
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        min-height: 35rem;
+        .banner__content {
+            padding: 1rem;
+        }
+    }    
+
+}
+
+.banner--post {
+    padding: 4rem 0;
+    align-items: end;
+
+    .banner__content {
+        @media (min-width: $breakpoint_mobile + 1px) {
+            padding: 0 3rem 2rem;
+        }
+    }
+}
+
+.banner--social {
+    min-height: 40rem;
+
+    .banner__content {
+        padding: 2rem;
+    }
+
+    h3 {
+        font-size: 2.5em;
+        font-weight: 700;
+        max-width: 16rem;
+    }
+
+    .block-social {
+        display: block;
+
+        .label {
+            display: block;
+            max-width: 20rem;
+        }
+
+        a {
+            font-size: 1.25em;
+            font-weight: 400;
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
+
+    &.banner--horizontal {
+        min-height: 30rem;
+
+        @media (min-width: $breakpoint_mobile + 1px) {
+            .banner__content {
+                padding: 2rem 4rem;
+            }
+        }
+
+    }
+
+    @media (max-width: $breakpoint_phone-big) {
+        .banner__content {
+            padding: 2rem 1rem;
+        }
+        h3 {
+            font-size: 2em;
+        }
+        .block-social {
+            font-size: .875em;
+        }
+    }
+
+}

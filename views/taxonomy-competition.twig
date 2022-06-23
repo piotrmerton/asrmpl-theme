@@ -1,0 +1,74 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--competition">
+        
+        <section class="content__title">
+
+            <div class="title__layout">
+
+                <div class="competition__title text--white">
+                    {% include "partials/scoreboard/competition-logo.twig" with { 'competition' : term } %}
+                    
+                    <h1>
+                        <span class="title">{{ term.name }}</span>
+                        <span class="subtitle">{{ __('Terminarz rozgrywek', 'theme') }}{% if queried_season %} {{queried_season.name}}{% endif %}</span>
+                    </h1>     
+                </div>
+                {% include "components/ui-season.twig" %}
+
+            </div>
+
+
+
+        </section>
+
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    {% if posts is not empty %}
+
+                       {% include "partials/schedule/schedule-nav.twig" %}
+
+                       {% include "partials/schedule/schedule-list.twig" with {'games' : schedule.games } %}
+
+                    {% else %}
+
+                        <div class="ui-message message--info">
+                            <p>{{ __('Brak meczów dla wybranych rozgrywek w danym sezonie.', 'theme') }}</p>
+                        </div>
+
+                    {% endif %}
+
+                </main>
+
+                <aside class="layout__side">
+
+                    {% if term.slug == "serie-a" and (queried_season == false or queried_season.slug == current_season.slug) %}
+                        {% include "blocks/side/block-serie-a.twig" %}
+                    {% endif %}
+
+                    {# TO DO: replace with posts by tag #}
+
+                    <div class="side__block">
+                    {% if related_tag %}
+                        {% include "blocks/block-posts.twig" with { 'block_title' : term.name ~ __(' - wiadomości', 'theme'), 'tag_id' : related_tag.term_id } %}
+                    {% else %}
+                        {% include "blocks/block-posts.twig" %}
+                    {% endif %}
+                    </div>
+
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

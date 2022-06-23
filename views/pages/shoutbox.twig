@@ -1,0 +1,35 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--shoutbox">
+
+        
+        <section class="content__title post__title text--white">
+            <h1>{{ page.title }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    {# default WordPress template comments #}
+                    {{ function('comments_template') }}
+
+                </main>
+                
+                <aside class="layout__side">
+
+                    {% include "components/banner/banner-social.twig" %}
+
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

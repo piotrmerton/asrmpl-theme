@@ -1,0 +1,75 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--player">
+
+        <section class="content__title player__title text--white">
+            <span class="player__number">{{ post.meta('number') }}</span>
+            <h1 class="player__name">{{ post.title }}</h1>
+            <figure class="player__country">
+                <img class="ui-ico ico--flag" loading="lazy" src="{{ theme.link ~ '/assets/svg/flag/1x1/' ~ post.meta('country').code }}.svg" />
+            </figure>
+        </section>
+
+        <section class="page__layout">
+
+            {% include "components/breadcrumbs.twig" %}
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    <section class="player__section player__bio">
+                        <div class="section__header header--with-border">
+                            <div class="header__layout">
+                                <h2>{{ __('Profil zawodnika', 'theme') }}</h2>
+
+                                {% include "partials/player/player-socialmedia.twig" with { 'socialmedia' : post.meta('socialmedia') } %}  
+                            </div>                      
+                        </div>
+                    </section>
+
+                    <section class="player__section player__profile">
+
+                        {% include "partials/player/player-photo.twig" with { 'image' : post.meta('image'), 'alt' : post.title } %}
+                        {% include "partials/player/player-data.twig" %}
+
+                    </section>
+
+                    {% if post.meta('connect_with_api') %}
+                        {% include "partials/player/player-stats.twig" %}
+                    {% endif %}
+
+                    {% if post.content %}
+                        {% include "partials/player/player-bio.twig" %}
+                    {% endif %}
+
+                    {% if post.meta('career_stats') %}
+                        {% include "partials/player/player-career.twig" %}
+                    {% endif %}
+
+                </main>
+
+                <aside class="layout__side side--compact">
+                    <h3 class="header--with-border">{{ __('Kadra', 'theme') }}</h3>
+                    {% include "partials/listing/squad-list.twig" %}
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+        
+        {% embed  "content/section/section-archive.twig" with { 'section_cta_link' : related_tag ? related_tag.link : false } %}
+            {% block section_content %}
+                {% if related_tag %}
+                    {% include "blocks/block-posts.twig" with { 'block_title' : post.title ~ __(' - powiązane wpisy', 'theme'), 'tag_id' : related_tag.term_id, 'grid' : 'horizontal' } %}
+                {% else %}
+                    {% include "blocks/block-posts.twig" with { 'grid' : 'horizontal' } %}
+                {% endif %}
+            {% endblock %}
+            
+        {% endembed %}
+
+    </div>
+
+{% endblock %}

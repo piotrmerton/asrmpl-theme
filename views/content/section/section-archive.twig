@@ -1,0 +1,19 @@
+<section class="content__section section-archive">
+    
+    {% block section_content %}
+        <div class="section__header">
+            <h2 class="header--with-border">{{ __('Pozostałe wiadomości', 'theme') }}</h2>
+        </div>
+        <ul class="posts__grid grid--home">
+            {% for post in posts %}
+                {% include "partials/item-post.twig" with { 'class' : 'grid__item', 'show_placeholder' : true } %}
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+    {% block section_cta %}
+        <div class="section__cta">
+            <a href="{{ section_cta_link ? section_cta_link : links.archive }}" class="button button--silver button--cta">{{ section_cta_label ? section_cta_label : __('Zobacz archiwum wiadomości', 'theme') }}</a>
+        </div>
+    {% endblock %}
+</section> 

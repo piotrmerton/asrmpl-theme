@@ -1,0 +1,318 @@
+{
+    "key": "group_6221e46d9d698",
+    "title": "Statystyki zawodnika",
+    "fields": [
+        {
+            "key": "field_6222089b0764f",
+            "label": "Bieżący sezon",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_6221e475e026b",
+            "label": "Połącz z API",
+            "name": "connect_with_api",
+            "type": "true_false",
+            "instructions": "Pobierz statystyki z api-football.com",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "acfe_field_group_condition": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6221e4b7e026c",
+            "label": "Dostępni zawodnicy",
+            "name": "id_player_api",
+            "type": "select",
+            "instructions": "Wskaż zawodnika z listy dostępnych zawodników na platformie api-football.com.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6221e475e026b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "choices": {
+                "2674": "Rui Patricio",
+                "277192": "P. Boer",
+                "342071": "D. Mastrantonio",
+                "763": "Daniel Fuzato",
+                "770": "R. Karsdorp",
+                "30424": "Ibanez",
+                "51572": "M. Vina",
+                "892": "C. Smalling",
+                "775": "D. Santon",
+                "30425": "G. Mancini",
+                "30924": "M. Kumbulla",
+                "862": "L. Spinazzola",
+                "342653": "Filippo Missori",
+                "342072": "Maissa Ndiaye",
+                "290181": "Filippo Tripi",
+                "343385": "Dimitrios Keramitsis",
+                "778": "B. Cristante",
+                "782": "L. Pellegrini",
+                "1456": "A. Maitland-Niles",
+                "30409": "J. Veretout",
+                "786": "N. Zaniolo",
+                "2375": "Sergio Oliveira",
+                "324": "A. Diawara",
+                "286475": "Edoardo Bove",
+                "158059": "Ebrima Darboe",
+                "203474": "Nicola Zalewski",
+                "342035": "C. Volpato",
+                "1457": "H. Mkhitaryan",
+                "19194": "T. Abraham",
+                "53535": "E. Shomurodov",
+                "67955": "Carles Perez",
+                "342038": "F. Afena-Gyan",
+                "347314": "Oliveras",
+                "791": "S. El Shaarawy",
+                "342034": "J. Voelkerling Persson"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "prepend": "",
+            "append": "",
+            "acfe_field_group_condition": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_622208b107650",
+            "label": "Poprzednie sezony",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_622208d407651",
+            "label": "Poprzednie sezony",
+            "name": "career_stats",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_62220a4b07652",
+                    "label": "Sezon",
+                    "name": "season",
+                    "type": "text",
+                    "instructions": "np. 2020\/2021",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "",
+                    "placeholder": "2020\/2021",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62220aa907653",
+                    "label": "Klub",
+                    "name": "team",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62220ae199b74",
+                    "label": "Mecze",
+                    "name": "games",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62220b0799b75",
+                    "label": "Bramki",
+                    "name": "goals",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62220ce275f5b",
+                    "label": "Asysty",
+                    "name": "assists",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62220b2299b76",
+                    "label": "Minuty na boisku",
+                    "name": "minutes",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "player"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1647594947
+}

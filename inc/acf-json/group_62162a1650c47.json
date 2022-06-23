@@ -1,0 +1,429 @@
+{
+    "key": "group_62162a1650c47",
+    "title": "Szczegóły meczu",
+    "fields": [
+        {
+            "key": "field_62162b7c8f849",
+            "label": "Drużyny",
+            "name": "teams",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_62162b938f84a",
+                    "label": "Drużyna gospodarzy",
+                    "name": "home",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "post_type": [
+                        "team"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "return_format": "id",
+                    "acfe_add_post": 0,
+                    "acfe_edit_post": 0,
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "ui": 1
+                },
+                {
+                    "key": "field_62162c208f84b",
+                    "label": "Drużyna gości",
+                    "name": "away",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "post_type": [
+                        "team"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "max": "",
+                    "return_format": "id",
+                    "acfe_add_post": 0,
+                    "acfe_edit_post": 0,
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "acfe_field_group_condition": 0,
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_62162d20f0c50",
+            "label": "Sezon",
+            "name": "season",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "taxonomy": "season",
+            "field_type": "select",
+            "max": "",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_62162cc2ba01c",
+            "label": "Rozgrywki",
+            "name": "competition",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "taxonomy": "competition",
+            "field_type": "select",
+            "max": "",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_6216307180e44",
+            "label": "Numer kolejki \/ Faza rozgrywek",
+            "name": "details",
+            "type": "text",
+            "instructions": "Przykłady: \"23. kolejka Serie A\", \"1. mecz 1\/16 finału Ligi Europy\" itd.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_6216317c9994a",
+            "label": "Data i godzina rozpoczęcia meczu",
+            "name": "date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "display_format": "Y-m-d H:i:s",
+            "return_format": "l, F j Y, H:i",
+            "first_day": 1,
+            "placeholder": "",
+            "min_date": "",
+            "max_date": "",
+            "min_time": "",
+            "max_time": "",
+            "no_weekends": 0,
+            "min_hour": "",
+            "max_hour": "",
+            "min_min": "",
+            "max_min": "",
+            "min_sec": "",
+            "max_sec": "",
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_622730f8098c2",
+            "label": "Transmisja",
+            "name": "broadcaster",
+            "type": "taxonomy",
+            "instructions": "Wybierz stację transmitującą spotkanie. Logo pojawi się w rubryce \"Najbliższe spotkanie\" na stronie głównej.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "broadcaster",
+            "field_type": "select",
+            "max": "",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_62162acdb1772",
+            "label": "Mecz zakończony",
+            "name": "is_final_time",
+            "type": "true_false",
+            "instructions": "Zaznacz, aby wprowadzić wynik.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "acfe_field_group_condition": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62162a57b176f",
+            "label": "Wynik",
+            "name": "result",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62162acdb1772",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_62162a70b1770",
+                    "label": "Wynik gospodarzy",
+                    "name": "home",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62162aaeb1771",
+                    "label": "Wynik gości",
+                    "name": "away",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62162b01b1773",
+                    "label": "Dodatkowe uwagi",
+                    "name": "details",
+                    "type": "text",
+                    "instructions": "Dodatkowe uwagi, np. \"Po dogrywce\" itd.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        },
+        {
+            "key": "field_62162e0f3d6bb",
+            "label": "Raport meczowy",
+            "name": "report",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62162acdb1772",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "max": "",
+            "return_format": "id",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "save_custom": 0,
+            "save_post_status": "publish",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_621ce069b6361",
+            "label": "ID skrótu meczu na YouTube",
+            "name": "youtube_id",
+            "type": "text",
+            "instructions": "ID filmu na YouTube to część adresu URL znajdująca się po parametrze \"v\", np. dla adresu https:\/\/www.youtube.com\/watch?v=PXvl5co-920 jest to PXvl5co-920",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62162acdb1772",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "np. PXvl5co-920",
+            "prepend": "",
+            "append": "",
+            "maxlength": 20,
+            "acfe_field_group_condition": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "game"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1646735857
+}

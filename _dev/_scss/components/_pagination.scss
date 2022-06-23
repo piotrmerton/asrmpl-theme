@@ -1,0 +1,41 @@
+/**
+ * markup: components/pagination.twig
+ * Notice: comments pagination use default WordPress markup, styles located in components/comments.scss
+ */
+.pagination {
+    .pages__list {
+        display: none;
+    }
+
+    .pagination__nav {
+        display: flex;
+        gap: .5rem;
+
+        .nav__item {
+            flex-basis: 100%;
+
+            > * {
+                display: block;
+            }
+            small {
+                font-weight: 400;
+                font-size: .875em;
+            }
+
+            &.item--disabled {
+                display: none;
+            }
+        }
+
+        a {
+            display: block;
+            background: $silver;
+            color: #636363;
+            font-weight: 600;
+            font-size: 1em;
+            padding: 1rem;
+            text-align: center;
+        }
+    }
+
+}

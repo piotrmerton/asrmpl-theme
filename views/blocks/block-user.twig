@@ -1,0 +1,19 @@
+<div class="block-user{% if class %} {{ class }}{% endif %}">
+
+    <nav class="user__nav">
+        <ul class="nav__list">
+        {% if user %}
+            <li class="nav__item item--user">
+                <img class="user__avatar" loading="lazy" src="{{ user.avatar }}" />
+                <a href="{{ links.dashboard }}">{{ __('Witaj', 'theme') }}, {{ user.user_nicename }}</a>
+            </li>
+            <li class="nav__item item--dashboard"><a class="button button--yellow" href="{{ links.dashboard }}">{{ __('Ustawienia konta', 'theme') }}</a></li>
+            <li class="nav__item item--logout"><a class="button button--white" href="{{ links.logout }}">{{ __('Wyloguj się', 'theme') }}</a></li>
+        {% else %}
+            <li class="nav__item item--login"><a class="button button--yellow" href="{{ links.login }}">{{ __('Logowanie', 'theme') }}</a></li>
+            <li class="nav__item item--register"><a class="button button--white" href="{{ links.register }}">{{ __('Rejestracja', 'theme') }}</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+
+</div>

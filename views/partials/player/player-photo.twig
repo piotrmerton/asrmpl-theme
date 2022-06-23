@@ -1,0 +1,14 @@
+<figure class="player__photo">
+
+    {% if image %}
+        <picture>
+            <source srcset="{{ image.sizes.player|towebp }}" type="image/webp">
+            <source srcset="{{ image.sizes.player }}" type="image/jpeg">
+            <img loading="lazy" src="{{ image.sizes.player }}" alt="{{ alt }}" />
+        </picture>
+        <figcaption>{{ image.caption }}</figcaption>
+    {% else %}
+        <img loading="lazy" src="{{ theme.link }}/assets/img/player-placeholder.png" />
+    {% endif %}
+
+</figure>

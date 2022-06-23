@@ -1,0 +1,53 @@
+<div class="scoreboard{% if class %} {{ class }}{% endif %}">
+
+    {# render_links flag - by default we don't want to render any links inside scoreboard markup #}
+
+    {% if render_links %}
+        <a href="{{ game.competition.link }}">
+            {% include "partials/scoreboard/competition-logo.twig" with { 'competition' : game.competition } %}
+        </a>
+    {% else %}
+        {% include "partials/scoreboard/competition-logo.twig" with { 'competition' : game.competition } %}
+    {% endif %}
+    
+    <div class="scoreboard__layout">
+        <div class="scoreboard__team team--home">
+            {% include "partials/scoreboard/team-crest.twig" with { 'team' : game.teams.home } %}
+            <span class="team__name">{{ game.teams.home.name }}</span>
+        </div>
+
+        <div class="scoreboard__result">                
+            {% if game.is_final_time %}
+                {{ game.result.home }}:{{ game.result.away }}
+            {% else %}
+                {{ game.date|date('H:i') }}
+            {% endif %}
+        </div>
+
+        <div class="scoreboard__team team--away">
+            {% include "partials/scoreboard/team-crest.twig" with { 'team' : game.teams.away } %}
+            <span class="team__name">{{ game.teams.away.name }}</span>     
+        </div>
+    </div><!-- /scoreboard__layout -->
+
+
+    <ul class="scoreboard__details">
+        <li class="list__item item--details">
+            {% if render_links %}
+                <a href="{{ game.competition.link }}">{{ game.details }}</a>
+            {% else %}
+                {{ game.details }}
+            {% endif %}
+        </li>
+        <li class="list__item item--date">{{ game.date|date( date_format ? date_format : 'l, j F Y H:i' )|capitalize }}</li>
+        
+        {% if game.broadcaster %}
+            <li class="list__item item--broadcaster">
+                {% include "partials/scoreboard/broadcaster.twig" with { 'broadcaster' : game.broadcaster } %}
+            </li>
+        {% endif %}
+
+    </ul>
+
+
+</div>

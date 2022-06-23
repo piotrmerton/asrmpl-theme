@@ -1,0 +1,25 @@
+<section class="content__section section-social">
+
+    {% if show_widgets %}
+        <div class="section__grid">
+
+            <div class="grid__item item--cover cover">
+                {% include "components/banner/banner-social.twig" %}
+            </div>
+
+            <div class="grid__item item--facebook">
+                <div class="fb-page" data-href="https://www.facebook.com/officialasromapl/" data-tabs="timeline" data-width="500" data-height="640" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/officialasromapl/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/officialasromapl/">ASRoma.pl</a></blockquote></div>
+            </div>
+
+            <div class="grid__item item--twitter">
+                <a class="twitter-timeline" data-lang="pl" data-height="640" href="https://twitter.com/ASRomaPL?ref_src=twsrc%5Etfw">Tweets by ASRomaPL</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+
+        </div><!-- /section__grid -->
+
+    {% else %}
+        {% include "components/banner/banner-social.twig" with { 'layout' : 'horizontal' } %}
+    {% endif %}
+
+</section>

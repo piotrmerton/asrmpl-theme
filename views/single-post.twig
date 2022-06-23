@@ -1,0 +1,81 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--post">
+
+        {% if is_report %}
+            {% include "components/scoreboard.twig" with { 'class' : 'scoreboard--big', 'render_links' : true } %}
+        {% endif %}
+
+        {% if has_banner == false and is_report == false  %}
+            <section class="content__title post__title text--white">
+                <h1>{{ post.title }}</h1>
+            </section>
+        {% elseif has_banner == true  %}
+            {% include "partials/post/post-banner.twig" with { 'post_label' : is_report ? __('Raport meczowy', 'theme') : false} %}
+        {% endif %}
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    <article class="post__body">
+
+                        {% if is_report == true and has_banner == false %}
+
+                        <div class="post__title">
+                            <h1>{{ post.title }}</h1>
+                        </div>
+
+                        {% endif %}
+
+                        <p class="post__excerpt">{{ post.post_excerpt }}</p>
+
+                        {% if has_banner == false %}
+                            {% include "partials/post/post-meta.twig" with { 'show_full_meta' : true, 'class' : 'meta--full' } %}
+
+                            {% if post.thumbnail %}
+                                {% include "partials/post/post-cover.twig" %}
+                            {% endif %}
+                        
+                        {% endif %}
+
+                        <div class="post__content text--rich">{{ post.content }}</div>
+                    </article>
+
+                    <div class="post__tags">
+                        {% include 'blocks/block-tags.twig' with { 'tags' : post.tags }  %}
+                    </div>
+
+                    {% if post.comment_status == 'open' or post.comment_count > 0  %}
+                        {# default WordPress template comments #}
+                        {{ function('comments_template') }}
+                    {% endif %}
+
+                </main>
+                
+                <aside class="layout__side">
+
+                    <div class="side__block">
+
+                        {% if post.category().slug == 'historia' %}
+                            {% include "blocks/block-posts.twig" with { 'block_title' : __('Historia klubu', 'theme'),'current_post_id' : post.id, 'category_id' : post.category().term_id, 'show_meta' : false } %}
+                        {% else %}
+                            {% include "blocks/block-posts.twig" with { 'current_post_id' : post.id } %}
+                        {% endif %}
+
+                            
+                    </div>
+
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

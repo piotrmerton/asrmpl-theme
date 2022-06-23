@@ -1,0 +1,13 @@
+<section class="section-featured-posts">
+    <ul class="posts__grid grid--featured">
+        {% for post in posts %}
+            {% include "partials/item-post.twig" with {
+                'class' : 'grid__item post--featured', 
+                'show_cta' : true,
+                'image_size' : 'large', 
+                'show_placeholder' : true 
+                } 
+            %}
+        {% endfor %}
+    </ul>
+</section>

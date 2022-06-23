@@ -1,0 +1,20 @@
+<li class="grid__item item--video">
+    <a class="do-play-video" href="{{ 'https://www.youtube.com/watch?v=' ~ video.meta('youtube_id') }}">
+        <div class="video__cover">
+            <figure class="cover__image cover cover--overlay">
+                <picture>
+                    <source srcSet="" type="image/webp" />
+                    <source srcSet="" type="image/jpeg" />
+                    <img loading="lazy" src="{{ video.meta('cover_image').sizes.video }}" width="480" height="270" alt="{{ video.title }}" />
+                </picture>
+                <figcaption class="image__credits">{{ video.meta('cover_image').caption }}</figcaption>
+            </figure>
+
+            <figure class="cover__ico">
+                <img loading="Lazy" src="{{ theme.link }}/assets/svg/ico/play.svg" />
+            </figure>
+        </div>
+
+        <p class="video__title">{{ video.title }}</p>
+    </a>
+</li>

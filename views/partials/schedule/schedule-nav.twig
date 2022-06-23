@@ -1,0 +1,10 @@
+<nav class="schedule__nav">
+    <ul class="nav__list">
+        {% for month in schedule.calendar %}
+            <li class="nav__item item--month"><a href="#{{ month|date("F") }}">{{ month|date("F")|capitalize }}</a></li>
+        {% endfor %}
+        {% if schedule.has_next_game %}
+            <li class="nav__item item--next"><a href="#next-game">{{ __('Następny mecz', 'theme') }}</a></li>
+        {% endif %}
+    </ul>
+</nav>

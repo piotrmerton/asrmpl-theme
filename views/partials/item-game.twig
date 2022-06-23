@@ -1,0 +1,9 @@
+<li {% if game.next %}id="next-game" {% endif %}class="list__item item--game">
+    {% if game.data.is_final_time %}
+        <a href="{{ game.link }}">
+            {% include "components/scoreboard.twig" with { 'game' : game.data, 'date_format' : 'j F Y H:i' } %}
+        </a>
+    {% else %}
+        {% include "components/scoreboard.twig" with { 'game' : game.data, 'date_format' : 'j F Y H:i' } %}
+    {% endif %}
+</li>

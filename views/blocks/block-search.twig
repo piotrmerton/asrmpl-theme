@@ -1,0 +1,17 @@
+<div class="block-search{% if class %} {{class}}{% endif %}">
+    <div class="viewport">
+
+        <form class="search__form" role="search" action="{{site.url}}" autocomplete="off">
+            <input class="search__query" type="text" name="s" placeholder="{{ placeholder ? placeholder : __('Wpisz czego szukasz...', 'theme') }}">
+            <input type="hidden" name="post_type" value="post" />
+            <button class="search__submit" type="submit">
+                <figure class="ui-ico">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/search.svg" />
+                </figure>
+            </button>
+        </form>
+
+        <p class="search__tutorial">{{__('Wpisz frazę, którą chcesz wyszukać i naciśnij enter, aby zobaczyć wyniki wyszukiwania lub', 'theme') }} <a class="do-toggle-search-ui" href="#">{{__('anuluj wyszukiwanie', 'theme') }}</a>.</p>
+
+    </div>
+</div>

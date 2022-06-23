@@ -1,0 +1,60 @@
+{
+    "key": "group_62272d885163f",
+    "title": "Stacja telewizyjna",
+    "fields": [
+        {
+            "key": "field_62272d8ddfada",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Logo stacji telewizyjnej. Wymiary 320x160px (proporcje 2:1).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "min_width": 320,
+            "min_height": 160,
+            "min_size": "",
+            "max_width": 320,
+            "max_height": 160,
+            "max_size": "",
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "broadcaster"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1646736766
+}

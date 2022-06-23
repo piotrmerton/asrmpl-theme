@@ -1,0 +1,135 @@
+.content__main {
+
+
+
+}
+
+.content__title {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    h1 {
+        max-width: 80rem;
+        margin: 0;
+        line-height: 1.2;
+
+        span {
+            display: block;
+        }
+        .subtitle {
+            font-size: 2rem;
+            font-weight: 400;
+        }
+    }
+
+    figure {
+        margin-right: 2rem;
+    }
+
+    img {
+        width: auto;
+        max-height: 5rem;
+    }
+
+    @media (max-width: $viewport_width) {
+        padding: 0 1rem;
+    }
+    @media (max-width: $breakpoint_mobile) {
+        padding: 0 .5rem;
+        h1 {
+            font-size: 2.5em;
+
+            
+            .subtitle {
+                font-size: .75em;
+            }
+        }
+        figure {
+            margin-right: 1rem;
+        }
+        img {
+            max-height: 4rem;
+        }
+    }
+
+    .title__layout {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+    }
+
+    &.text--center {
+        h1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+
+
+}
+
+
+.content__section {
+    background: #fff;
+    position: relative;
+
+    padding: 3rem;
+
+    @media (max-width: $breakpoint_viewport) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @media (max-width: $breakpoint_hd) {
+        padding: 2rem 1rem;
+    }    
+
+}
+
+.section__header {
+    &.header--with-border {
+        margin-bottom: 2rem;
+        h2 {
+            margin: 0;
+        }       
+    }
+    .header__layout {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+
+
+    @media (max-width: $breakpoint_mobile) {
+        h2,
+        h3 {
+            font-size: 2em;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: $breakpoint_phone-big) {
+        h2,
+        h3 {
+            font-size: 1.75em;
+        }
+    }
+
+}
+
+
+
+.section__body {
+    position: relative;
+    z-index: 2; //above cover
+}
+

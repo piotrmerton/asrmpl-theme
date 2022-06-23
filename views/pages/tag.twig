@@ -1,0 +1,34 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--tag">
+        
+        <section class="content__title text--white">
+            <h1>{{ tag.name }} - {{ __('archiwum wpisów', 'theme') }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    {% include 'partials/listing/posts-list.twig' with { 'class' : 'list--archive' } %}
+        
+                    {% include 'components/pagination.twig' %}
+
+                </main>
+
+                <aside class="layout__side">
+                    {% include "blocks/side/block-schedule.twig" %}
+                    {% include "components/banner/banner-social.twig" %}
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

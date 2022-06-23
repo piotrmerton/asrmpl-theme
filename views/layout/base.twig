@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-19275473-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-19275473-1');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> 
+
+<style>{{ source('assets/css/global.css', ignore_missing = true) }}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{# TO DO: check for yoast first? #}
+{% include 'components/seo.twig' %}
+
+{{function('wp_head')}}
+
+{# favicon definitions generated via https://realfavicongenerator.net #}
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#830825">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class="{{body_class}}" style="background-image: url('{{ theme.link }}/assets/img/bg-page.png')">
+
+{% block header %}
+	{% include 'layout/header.twig' %}
+{% endblock %}
+	<div class="page-container">
+		<div class="viewport viewport--no-padding">
+			
+			{% block body %}
+				<p>Block body placeholder</p>
+			{% endblock %}
+
+			{% block footer %}
+				{% include 'layout/footer.twig' %}
+			{% endblock %}		
+
+			{{ function('wp_footer') }}
+			
+		</div>
+	</div>
+
+	{% block aside %}
+
+	{% endblock %}
+</body>
+
+{% block css_footer_stylesheets %}
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+	{# alternatively, we can add context-based stylesheets via wp_enqueue_style or print_late_styles (https://wordpress.stackexchange.com/a/186066)  #}
+	{% if is_home %}
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap&text=ChitifaRomanonperdemai" rel="stylesheet">
+		<link rel="stylesheet" href="{{ theme.path }}/assets/css/pages/index.css?v=1637097512" type="text/css" />
+
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v13.0" nonce="aEizlOBl"></script>
+	{% endif %}
+
+	<link rel="stylesheet" href="{{ theme.path }}/assets/css/vendor.css" type="text/css" />
+
+{% endblock %}
+
+</html>

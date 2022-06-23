@@ -1,0 +1,38 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--standings">
+
+        <section class="content__title standings__title text--white">
+            {% include "partials/scoreboard/competition-logo.twig" with { 'competition' : competition } %}
+            
+            <h1>
+                <span class="title">{{ competition.name }}</span>
+                <span class="subtitle">{{ __('Tabela rozgrywek', 'theme') }}</span>
+            </h1>
+        </section>
+
+        <section class="page__layout">
+
+            {% include "components/breadcrumbs.twig" %}
+        
+            <main class="layout__main">
+                {% include 'components/standings.twig' with { 'full_table' : true } %}
+
+                <div class="standings-legend">
+                    <h3>{{ __('Legenda', 'theme') }}</h3>
+                    <ul>
+                        <li class="ucl">{{ __('Faza pucharowa UEFA Champions League', 'theme') }}</li>
+                        <li class="uel">{{ __('Faza pucharowa UEFA Europa League', 'theme') }}</li>
+                        <li class="uecl">{{ __('Kwalifikacje UEFA Europa Conference League', 'theme') }}</li>
+                        <li class="rel">{{ __('Spadek do Serie B', 'theme') }}</li>
+                    </ul>
+                </div>
+            </main>     
+
+        </section><!-- /page__layout -->
+
+    </div>
+    
+{% endblock %}

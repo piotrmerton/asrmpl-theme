@@ -1,0 +1,42 @@
+/**
+ *  Warning: we can't use slash as a division anymore - use sass:math instead, see:
+ *  https://sass-lang.com/documentation/breaking-changes/slash-div
+ */
+@use "sass:math";
+
+$row : math.div($viewport_width, 12);
+
+.grid--viewport {
+    display: grid;
+    grid-template-columns: 1fr 1fr [viewport-start] repeat(12, 8.33333%) [viewport-end] 1fr 1fr;
+    grid-template-rows: auto;
+
+    @media all and (min-width: $viewport_width + 1px) {
+        grid-template-columns: 1fr 1fr [viewport-start] repeat(12, minmax(auto, $row)) [viewport-end] 1fr 1fr;
+    }
+}
+
+.grid--content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid--two-columns {
+    display: grid;
+    grid-gap: 2rem;
+
+    @media all and (min-width: $breakpoint_mobile + 1px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3rem;		
+    }
+}
+
+.grid--three-columns {
+    display: grid;
+    grid-row-gap: 1rem;
+
+    @media all and (min-width: $breakpoint_mobile + 1px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem 2rem;		
+    }	
+}

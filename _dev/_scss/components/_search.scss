@@ -1,0 +1,123 @@
+.search-overlay {
+    position: fixed;
+    background: rgba(131, 8, 37, .96);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 88; //below header
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .overlay__nav {
+        position: absolute;
+        top: 12rem;
+        max-width: 80rem;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+
+    &:not(.search--open) {
+        display: none;
+    }
+}
+
+.block-search {
+    
+    ::placeholder {
+        color: #fff;
+    }
+
+    .search__form {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .search__submit {
+            order: 1;
+            flex-grow: 0;
+        }
+        .search__query {
+            order: 2;
+        }
+    }
+
+    .search__query {
+        width: 100%;
+        padding: 0;
+        color: #fff;
+        border: 0;
+        background: transparent;        
+    }
+
+    .search__submit {
+        background: transparent;
+        border-radius: 0;
+        width: auto;
+        height: 100%;
+        padding: 0;
+        margin: 0 2rem 0 0;
+
+        .ui-ico {
+            margin: 0;
+        }
+    }    
+
+    .search__tutorial {
+        font-weight: 300;
+        color: #d6758b;
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+
+    &.search--desktop {
+
+        .search__query {
+            
+            font-size: 5em;
+            font-weight: 300;
+
+            @media (max-width: $breakpoint_hd) {
+                font-size: 4em;
+            }
+            @media (max-width: $breakpoint_mobile) {
+                font-size: 2em;
+            }            
+        }
+        .search__submit {
+            width: auto;
+        }
+
+
+
+    }
+
+    &.search--mobile {
+        .search__form {
+            justify-content: center;
+            margin: .75rem 0;
+        }
+        .search__query {
+            order: 1;
+            border-bottom: 1px solid #fff;
+            padding: .5rem;
+            max-width: 15rem;
+            font-weight: 300;
+        }
+        .search__submit {
+            order: 2;
+            margin: 0 0 0 1rem;
+            .ui-ico {
+                height: 1.5rem;
+            }
+        }
+        .search__tutorial {
+            display: none;
+        }
+    }
+}

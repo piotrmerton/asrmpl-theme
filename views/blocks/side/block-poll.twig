@@ -1,0 +1,10 @@
+{% if function('do_shortcode', '[onyx-poll]') %}
+<div class="side__block block-poll">
+    <div class="block__header">
+        <h3 class="header--with-border">{{ __('Sonda', 'theme') }}</h3>
+    </div>
+    {% filter shortcodes %}
+        [onyx-poll]
+    {% endfilter %}
+</div>
+{% endif %}

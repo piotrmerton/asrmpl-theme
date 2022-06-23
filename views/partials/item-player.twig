@@ -1,0 +1,19 @@
+<li class="grid__item item--player">
+    <a href="{{ player.link }}">
+        
+        {% include "partials/player/player-photo.twig" with { 'image' : player.meta('image'), 'alt' : player.title } %}
+
+        <div class="player__info">
+            <div class="player__meta">
+                <span class="player__number">{{ player.meta('number') }}</span>
+                <div class="player__name">
+                    <span class="name">{{ player.meta('name') }}</span>
+                    <span class="surname">{{ player.meta('surname') }}</span>
+                </div>
+            </div>
+            <figure class="player__country">
+                <img class="ui-ico ico--flag" loading="lazy" src="{{ theme.link ~ '/assets/svg/flag/1x1/' ~ player.meta('country').code }}.svg" />
+            </figure>                            
+        </div>
+    </a>
+</li>

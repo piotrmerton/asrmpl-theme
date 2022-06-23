@@ -1,0 +1,41 @@
+<nav class="{{ class }}">
+    {% if nav_title %}
+        <h4>{{ nav_title }}</h4>
+    {% endif %}
+    <ul class="nav__list">
+        {% for item in nav.items %}
+            <li class="nav__item{% if item.children %} item--has-submenu{% endif %} {{ item.classes|join(' ') }}">
+                <a href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children and hide_submenu is not defined %}
+                    <ul class="nav__submenu submenu__list">                        
+                        {% for child in item.children %}
+                            <li class="submenu__item{{ child.classes|join(' ') }}">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if slug == "header" %}
+        <li class="nav__item item--search">
+            <a href="#" class="do-toggle-search-ui">
+                <figure class="ui-ico">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/search.svg" />
+                </figure>            
+            
+                <span class="label">{{ __('Szukaj', 'theme') }}</span>
+            </a>
+            {% include "blocks/block-search.twig" with { 'class' : 'search--mobile', 'placeholder' : __('Szukaj...', 'theme') } %}
+        </li>
+        {% endif %}
+    </ul>
+
+    {% if slug == "header" %}
+        
+        {% include "blocks/block-user.twig" with { 'class' : 'user--nav' } %}
+        
+    {% endif %}
+
+</nav>

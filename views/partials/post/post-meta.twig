@@ -1,0 +1,26 @@
+<section class="post__meta{% if class %} {{ class }}{% endif %}">
+    {% include "partials/post/post-date.twig" %}
+    {% include "partials/post/post-comment-count.twig" %}
+
+    {% if show_full_meta %}
+
+        {% if post.meta('source') %}
+            <div class="post__source">
+
+                <figure class="ui-ico">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/news.svg" />
+                </figure>            
+                <span class="label">{{ __('Źródło', 'theme') }}: {{ post.meta('source') }}</span>
+            </div>
+        {% endif %}
+
+            <div class="post__author">
+                <figure>
+                    <img loading="lazy" src="{{ post.author.avatar() }}">
+                </figure>
+                
+                <span class="label">{{ __('Autor', 'theme') }}: {{ post.author.name }}</span>
+            </div>
+
+    {% endif %}
+</section>

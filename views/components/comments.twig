@@ -1,0 +1,42 @@
+<section id="comments" class="ui-comments">
+
+    {% if is_shoutbox == false %}
+        <div class="section__header header--with-border">
+            <div class="header__layout">
+                <h2>{{ __('Komentarze', 'theme') }}</h2>
+
+                {% include "partials/comments/comments-sort.twig" %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if comments_open == true %}
+
+        {% block comment_form %}
+            {{ function('comment_form', comment_form) }}
+        {% endblock %}
+
+    {% else %}
+
+        <div class="ui-message message--info">
+            <p>{{ __('Komentarze są wyłączone dla archiwalnych wpisów.', 'theme') }}</p>
+        </div>
+
+    {% endif %}
+
+    {% if have_comments %}
+
+        {% block comments_list %}
+            <ul class="comments__list">
+                {{ comments }}
+            </ul>
+        {% endblock %}
+
+        {% block comments_pagination %}
+            {{ comments_pagination }}
+        {% endblock %}
+
+    {% endif %}
+
+
+</section>

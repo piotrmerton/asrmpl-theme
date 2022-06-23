@@ -1,0 +1,51 @@
+<header class="header__user">
+    <div class="viewport viewport--no-padding">
+        {% include "blocks/block-user.twig" with { 'class' : 'user--header' } %}
+    </div>
+</header>
+
+
+<header id="header-top" class="header-top">
+
+    <div class="header__grid">
+        <section class="header__section section--nav">
+            <div class="viewport viewport--no-padding">
+                <section class="header__layout">
+
+                    <div class="header__branding">
+                        <div class="header__logo logo">
+                            <a href="{{ site.url }}" title="{{ site.description }}">
+                                <figure>
+                                    {{ source('assets/svg/logo.svg', ignore_missing = false) }}
+                                </figure>  
+                            </a>           
+                        </div> 
+
+                        {% include "blocks/block-social.twig" with { 'class' : 'block--header' } %}
+
+                        <a class="ui-nav do-toggle-nav" href="#" role="button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>                
+                    </div>
+                    
+                    {% include 'components/nav.twig' with { 'slug' : 'header', 'class' : 'header__nav nav--top' } %}
+                    
+                </section>
+            </div>
+        </section>
+
+    </div><!-- /header__grid -->
+
+</header>
+
+<aside id="search-overlay" class="search-overlay">
+    {% include "blocks/block-search.twig" with { 'class' : 'search--desktop', 'overlay' : true } %}
+    <nav class="overlay__nav">
+        <a class="ui-action action--close do-toggle-search-ui" href="#" title="{{__('Zamknij wyszukiwarkę', 'theme') }}">
+        <img class="ui-ico" src="{{ theme.link }}/assets/svg/ico/close.svg" />	
+        </a>
+    </nav>
+</aside>

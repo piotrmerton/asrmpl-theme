@@ -1,0 +1,14 @@
+{# seo #}
+{% if is_single %}
+
+    <meta property="og:title" content="{{ post.title }}" />
+
+    {% if post.post_excerpt %}
+        <meta property="og:description" content="{{ post.post_excerpt }}" />
+    {% endif %}
+
+	{% if post.thumbnail %}
+	    <meta property="og:image" content="{{ post.thumbnail.src('article-cover') }}" />
+	{% endif %}
+
+{% endif %}

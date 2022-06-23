@@ -1,0 +1,49 @@
+.section-videos {
+    background: $darkred;
+
+    .section__title {
+        margin-bottom: 3rem;
+        h2 {
+            font-size: 3em;
+        }
+    }
+
+
+
+    .videos__grid {
+        margin: 2rem 0;
+
+        @media (max-width: $breakpoint_hd) and (min-width: $breakpoint_mobile + 1px) {
+            > li {
+                &:nth-child(n+4) {
+                    display: none
+                }
+            }
+        }
+    }
+
+    .item--video {
+        > a {
+            color: #fff;
+        }
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        .section__title {
+            margin-bottom: 2rem;
+            h2 {
+                font-size: 2em;
+            }
+        }
+        .videos__grid {
+            margin: 1rem 0;
+        }
+    }    
+
+
+
+}
+

@@ -1,0 +1,34 @@
+<section class="player__section player__career">
+    <div class="section__header">
+        <h2 class="header--with-border">{{ __('Kariera', 'theme') }}</h2>
+    </div>       
+
+    <table class="career__stats">
+
+        <thead>
+            <th class="season">{{ __('Sezon', 'theme') }}</th>
+            <th class="team">{{ __('Klub', 'theme') }}</th>
+            <th class="stats games">{{ __('Mecze', 'theme') }}</th>
+            <th class="stats goals">{{ __('Bramki', 'theme') }}</th>
+            <th class="stats assists">{{ __('Asysty', 'theme') }}</th>
+            <th class="stats minutes">{{ __('Minuty', 'theme') }}</th>
+        </thead>
+
+        <tbody>
+
+        {% for row in post.meta('career_stats') %}
+            <tr>
+                <td class="season">{{row.season}}</td>
+                <td class="team">{{row.team}}</td>
+                <td class="stats games">{{row.games}}</td>
+                <td class="stats goals">{{row.goals}}</td>
+                <td class="stats assists">{{row.assists}}</td>
+                <td class="stats minutes">{{row.minutes}}</td>
+            </tr>
+                                    
+        {% endfor %}     
+
+        </tbody>
+    </table>
+
+</section>

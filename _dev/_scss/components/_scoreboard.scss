@@ -1,0 +1,185 @@
+.scoreboard {
+
+    color: $black;
+    font-weight: bold;
+    margin: 1rem 0 1.5rem;
+
+
+    .competition__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: .5rem;
+
+        img {
+            width: auto;
+            height: 5rem;
+        }
+
+        @media (max-width: $breakpoint_mobile) {
+            img {
+                height: 3.5rem;
+            }
+        }
+
+    }
+
+
+
+    &.scoreboard--big {
+
+        color: #fff;
+        a {
+            color: #fff;
+        }
+
+        .scoreboard__details {
+            text-align: center;
+        }
+
+        @media (min-width: $breakpoint_mobile + 1px) {
+
+            .scoreboard__team,
+            .scoreboard__result {
+                font-size: 4em;
+            }
+    
+            .scoreboard__team {
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+            .scoreboard__details {
+                display: flex;
+                justify-content: center;
+        
+                li {
+                    &:not(:last-child) {
+                        &::after {
+                            content: "·";
+                            margin: 0 .5rem;
+                            font-weight: 600;
+                        }
+                    }
+                }                 
+            }
+        }
+
+        @media (max-width: $breakpoint_mobile) {
+
+        }
+
+        @media (max-width: $breakpoint_phone-big) {
+            .scoreboard__team {
+                font-size: 1.5em;
+                font-weight: 600;
+            }
+        }
+
+
+
+    }
+
+
+    
+
+}
+
+.scoreboard__layout {
+    display: grid;
+    grid-template-columns: 5fr max-content 5fr;
+    align-items: center;
+}
+
+.scoreboard__result {
+    font-size: 3em;
+    text-align: center;
+    white-space: nowrap;
+    
+}
+.scoreboard__team {
+    font-size: 2em;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+
+    .team__crest {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        width: 3rem;
+        height: 3rem;
+    }    
+
+    &.team--home {
+        justify-content: end;
+        .team__name {
+            order: 1;
+        }            
+        .team__crest {
+            order: 2;
+        }
+    }
+    &.team--away {
+        .team__crest {
+            order: 1;
+        }
+        .team__name {
+            order: 2;
+        }
+    }
+    
+}  
+
+.scoreboard__details {
+
+    font-weight: 300;
+    font-size: .875em;
+    margin-top: 1rem;
+
+    img {
+        width: auto;
+        height: 3rem;
+    }
+
+    .broadcaster__layout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .label {
+            margin-right: .5rem;
+        }
+        span {
+            font-size: .875em;      
+            color: silver; 
+        }
+    }
+    .broadcaster__name {
+        display: block;
+        margin-top: .5rem;
+    }
+    
+}
+
+@media (max-width: $breakpoint_phone-big) {
+
+
+
+    .scoreboard__team {
+        display: block;
+        font-size: 1.75em;
+
+        .team__crest {
+            justify-content: center;
+            margin-bottom: .25rem;
+        }
+
+    }
+
+}

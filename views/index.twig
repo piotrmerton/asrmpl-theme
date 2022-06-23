@@ -1,0 +1,64 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+   
+    <section class="section-honours">
+        <ul class="honours__list">
+            <li class="item--honour honour--scudetto">
+                <figure class="ui-ico">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/scudetto.svg" />
+                </figure>
+                <span class="label">x{{ honours.scudetto }}</span>
+            </li>
+            <li class="item--honour honour--coccarda">
+                <figure class="ui-ico">
+                    <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/coccarda.svg" />
+                </figure>
+                <span class="label">x{{ honours.coccarda }}</span>
+            </li>
+        </ul>
+        <div class="slogan">
+            <p>Chi tifa Roma non perde mai</p>
+        </div>
+    </section>
+
+    {% include "content/section/section-featured-posts.twig" with { 'posts' : posts|slice(0, 3) } %}
+
+    {% include "content/section/section-schedule.twig" with { 'posts' : posts|slice(0, 3) } %}
+
+    <section class="page__layout">
+    
+        <div class="layout__grid grid--home">
+
+            <main class="layout__main">
+                <section class="section-posts">
+                    <ul class="posts__list">
+                        {% for post in posts|slice(3, 10) %}
+                            {% include "partials/item-post.twig" with { 'class' : 'list__item', 'preview_length' : 66} %}
+                        {% endfor %}
+                    </ul>
+
+                    <a href="{{ links.archive }}" class="button button--silver button--cta">{{ __('Zobacz archiwum wiadomości', 'theme') }}</a>
+                </section>   
+            </main>     
+
+            <aside class="layout__side side--display-on-mobile">
+                {% include "blocks/side/block-calendar.twig" %}
+                {% include "blocks/side/block-shoutbox.twig" %}
+                {% include "blocks/side/block-serie-a.twig" %}
+                {% include "blocks/side/block-schedule.twig" %}
+                {% include "blocks/side/block-injuries.twig" %}
+                {% include "blocks/side/block-poll.twig" %}
+            </aside>
+
+        </div><!-- /layout__grid -->
+
+    </section><!-- /page__layout -->
+    
+    {% include "content/section/section-articles.twig" %}
+
+    {% include "content/section/section-videos.twig" %}
+
+    {% include "content/section/section-archive.twig" with { 'posts'  : posts|slice(13, 7) } %}
+
+{% endblock %}

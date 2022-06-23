@@ -1,0 +1,20 @@
+<ul class="schedule__list">
+
+    {% for game in games %}
+    
+        {% set month = game.date|date("F Y") %}
+
+        {% if date is not defined or date != month %}
+            <li class="list__item item--date">
+                <h3 id="{{ game.date|date("F") }}" class="header--with-border">{{ month|capitalize }}</h3>
+            </li>                        
+
+        {% endif %}
+
+        {% include "partials/item-game.twig" %}
+
+        {% set date = month %}
+    
+    {% endfor %}
+
+</ul>

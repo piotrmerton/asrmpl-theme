@@ -1,0 +1,34 @@
+.block-injuries {
+
+    .injury__player {
+        font-size: 1.125em;
+        font-weight: 600;
+        color: $black;
+        margin-bottom: 0;
+    }
+    .injury__desc {
+        font-weight: 400;
+        font-size: 1em;
+
+        p {
+            line-height: 1.5;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    .injury__list {
+
+        padding-left: 1rem;
+
+        > li {
+            list-style: disc;
+            &:not(:last-child) {
+                padding-bottom: 1rem;
+                border-bottom: 1px solid #c1c1c1;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

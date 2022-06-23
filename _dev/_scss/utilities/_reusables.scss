@@ -1,0 +1,42 @@
+.logo {
+    display: block;
+
+
+    svg {
+        width: auto;
+        height: 2.5rem;
+        vertical-align: bottom;
+    }
+}
+
+ //youtube embed wrapper for 16:9 aspect ratio
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.overlay {
+	position: fixed;
+	z-index: 666;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+			backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;  
+	
+	&.overlay--sidebar {
+		@media (max-width: $breakpoint_mobile) {
+			display: none;
+		}
+    }
+}

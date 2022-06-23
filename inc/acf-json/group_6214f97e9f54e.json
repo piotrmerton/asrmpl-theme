@@ -1,0 +1,86 @@
+{
+    "key": "group_6214f97e9f54e",
+    "title": "Zdjęcie wpisu",
+    "fields": [
+        {
+            "key": "field_6214f9831e64b",
+            "label": "Okładka wpisu",
+            "name": "cover_image",
+            "type": "image",
+            "instructions": "Główne zdjęcie wpisu. Okładka jest widoczna na listingach (strona główna, archiwum itd.) oraz w tagach Open Graph (wykorzystywanych przez Google, Twittera, Facebooka itd.) Preferowane wymiary: 960x640px lub 1920x960px jeśli chcesz wyświetlić zdjęcie w formie Banneru.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 1,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "min_width": 960,
+            "min_height": 640,
+            "min_size": "",
+            "max_width": 1920,
+            "max_height": 1280,
+            "max_size": 1,
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
+        },
+        {
+            "key": "field_6215230510f8b",
+            "label": "Wykorzystaj okładkę jako Banner",
+            "name": "has_banner",
+            "type": "true_false",
+            "instructions": "Jeśli wgrana Okładka ma małą rozdzielczość (mniejszą niż 1920x720px) to zostaw pole odznaczone, ponieważ powiększone zdjęcie o małych wymiarach będzie miało złą jakość.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6214f9831e64b",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Tak",
+            "default_value": 0,
+            "ui": 0,
+            "acfe_field_group_condition": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1646997689
+}

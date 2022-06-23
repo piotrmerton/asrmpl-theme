@@ -1,0 +1,42 @@
+.section-social {
+ 
+    .section__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+
+        height: 40rem;
+
+        .item--cover {
+            position: relative;
+            .banner {
+                height: 100%;
+                min-height: 0;
+            }
+
+            @media (min-width: $breakpoint_mobile + 1px) {
+                h3 {
+                    font-size: 3em;
+                }
+            }
+        }
+
+        @media (max-width: $breakpoint_hd) {
+            grid-template-columns: 1fr;
+            height: 30rem;
+
+            > .grid__item {
+                &:nth-child(n+2) {
+                    display: none;
+                }
+            }
+        }
+
+
+    }
+
+
+
+
+
+}

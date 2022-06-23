@@ -1,0 +1,29 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--login">
+
+        
+        <section class="content__title post__title text--white">
+            <h1>{{ page.title }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    <div class="ui-user">
+                        {{ page.content }}
+                    </div>
+                    
+
+                </main>
+            
+            
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

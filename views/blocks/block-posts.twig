@@ -1,0 +1,26 @@
+<div class="block-posts">
+    <div class="block__header">
+        {% if block_title is not defined %}
+            <h3 class="header--with-border">
+                {{ __('Najnowsze wiadomości', 'theme') }}
+            </h3>
+        {% elseif block_title != false %}
+            <h3 class="header--with-border">
+                {{ block_title }}
+            </h3>        
+        {% endif %}
+    </div>
+
+    {# asynchronously rendered latest posts, see _js/render #}
+    <div class="posts-list" 
+    
+        {% if current_post_id %}data-current-post-id={{ current_post_id }} {% endif %}
+        {% if category_id %}data-category-id={{ category_id }} {% endif %}
+        {% if tag_id %}data-tag-id={{ tag_id }} {% endif %}
+        {% if game_id %}data-game-id={{ game_id }} {% endif %}
+        {% if show_meta is defined %}data-show-meta="{{ show_meta }}" {% endif %}
+        {% if limit %}data-limit={{ limit }} {% endif %}
+        data-grid="{{ grid ? grid : 'vertical'}}"
+
+    ></div>
+</div>

@@ -1,0 +1,22 @@
+.section-archive {
+    padding-bottom: 0;
+
+    .section__cta {
+        margin-top: 3rem;
+    }
+
+    .block-posts {
+        .block__header {
+            h3 {
+                font-size: 2.5em;
+
+                @media (max-width: $breakpoint_mobile) {
+                    font-size: 2em;
+                }
+                @media (max-width: $breakpoint_phone-big) {
+                    font-size: 1.7em;
+                }
+            }
+        }
+    }
+}

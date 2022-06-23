@@ -1,0 +1,49 @@
+<div class="player__data">
+
+    <dl>
+        <dt>{{ __('Imię i nazwisko', 'theme') }}</dt>
+        <dd>{{ post.meta('fullname') ? post.meta('fullname') : post.title }}</dd>
+    </dl> 
+    
+
+    <dl>
+        <dt>{{ __('Narodowość', 'theme') }}</dt>
+        <dd>{{ post.meta('country').localized }}</dd>
+    </dl>                                           
+    <dl>
+        <dt>{{ __('Data urodzenia', 'theme') }}</dt>
+        <dd>{{ post.meta('birthdate') }}</dd>
+    </dl>
+
+    <dl>
+        <dt>{{ __('Wiek', 'theme') }}</dt>
+        <dd>
+            {{ player.age }}
+        
+            {% if player.age|last in ['2', '3', '4'] %}
+                {{ __('lata', 'theme') }}
+            {% else %}
+                {{ __('lat', 'theme') }}
+            {% endif %}
+        <dd>
+    </dl>                            
+    <dl>
+        <dt>{{ __('Pozycja na boisku', 'theme') }}</dt>
+        <dd>{{ player.role }}<dd>
+    </dl>                    
+    <dl>
+        <dt>{{ __('Wzrost', 'theme') }}</dt>
+        <dd>{{ post.meta('height') }} cm</dd>
+    </dl>
+    <dl>
+        <dt>{{ __('Waga', 'theme') }}</dt>
+        <dd>{{ post.meta('weight') }} kg</dd>
+    </dl> 
+
+    {% if post.meta('contract_expiry_date') %}
+    <dl>
+        <dt>{{ __('Kontrakt', 'theme') }}</dt>
+        <dd>{{ post.meta('contract_expiry_date') }}</dd>
+    </dl>  
+    {% endif %}                                                 
+</div>

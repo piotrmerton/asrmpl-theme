@@ -1,0 +1,31 @@
+<div class="banner banner--social{% if layout == 'horizontal' %} banner--horizontal {% endif %}">
+    <div class="banner__content text--white">
+        <div>
+            <h3>{{ __('Dołącz do społeczności', 'theme') }}</h3>
+            {% include "blocks/block-social.twig" %}
+        </div>
+    </div>
+
+    {% if layout == 'horizontal' %}
+        <figure class="banner__cover cover">
+            <picture>
+                <source srcset="{{ theme.link }}/assets/img/banner/totti-horizontal.webp" type="image/webp"> 
+                <source srcset="{{ theme.link }}/assets/img/banner/totti-horizontal.jpg" type="image/jpeg"> 
+                <img loading="lazy" src="{{ theme.link }}/assets/img/banner/totti-horizontal.jpg" />
+            </picture>
+        </figure>
+    {% else %}
+        <figure class="banner__cover cover">
+            <picture>
+                <source media="(min-width: 1281px)" srcset="{{ theme.link }}/assets/img/banner/totti-vertical.webp" type="image/webp"> 
+                <source media="(min-width: 1281px)" srcset="{{ theme.link }}/assets/img/banner/totti-vertical.jpg" type="image/jpeg"> 
+                
+                <source media="(max-width: 1280px)" srcset="{{ theme.link }}/assets/img/banner/totti-horizontal.webp" type="image/webp">
+                <source media="(max-width: 1280px)" srcset="{{ theme.link }}/assets/img/banner/totti-horizontal.jpg" type="image/jpeg"> 
+                <img loading="lazy" src="{{ theme.link }}/assets/img/banner/totti-vertical.jpg" />
+            </picture>
+        </figure>
+    {% endif %}
+
+
+</div>

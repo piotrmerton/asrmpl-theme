@@ -1,0 +1,14 @@
+<div class="post__date">
+
+    <figure class="ui-ico">
+        <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/calendar.svg" />
+    </figure>
+
+    <div class="label">
+        {% if date( post.date('U') ) < date('-1 day') %}
+            <span class="date">{{ post.date() }}</span>, <span class="time">{{ post.time() }}</span>
+        {% else %}
+            <span class="date">{{ function('human_time_diff', post.date('U'), 'now'|date('U') )}}</span> <span class="label">{{ __('temu', 'theme') }}</span>
+        {% endif %}
+    </div>
+</div>

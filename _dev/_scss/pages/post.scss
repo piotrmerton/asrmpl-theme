@@ -1,0 +1,49 @@
+@import '../utilities/variables';
+
+.content--post {
+
+    .breadcrumbs {
+        margin-bottom: 1rem;
+    }
+
+    .banner--post {
+        .post__title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    article {
+        .post__title {
+            h1 {
+                margin-bottom: 1rem;
+            }
+        }
+        .post__excerpt {
+            font-size: 2em;
+            font-weight: 500;
+            color: $black;
+            line-height: 1.5;
+        }
+        .post__cover {
+            margin: 1rem 0;
+        }
+        .post__meta {
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        article {
+            .post__excerpt {
+                font-size: 1.75em;
+            }
+        }
+    }
+    @media (max-width: $breakpoint_phone_big) {
+        article {
+            .post__excerpt {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

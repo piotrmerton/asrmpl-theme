@@ -1,0 +1,19 @@
+{% block breadcrumbs %}
+    <div class="breadcrumbs">        
+        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+            <li class="list__item item--start">{{ __('Jesteś tutaj', 'theme') }}:</li>
+
+            {% for breadcrumb in breadcrumbs %}
+
+                <li class="list__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="{{ breadcrumb.url }}">
+                        <span itemprop="name">{{ breadcrumb.title }}</span>
+                    </a>
+                    <meta itemprop="position" content="{{ loop.index }}" />
+                </li>
+
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

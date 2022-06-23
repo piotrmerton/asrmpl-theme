@@ -1,0 +1,19 @@
+<div class="post__comment-count">
+
+    <figure class="ui-ico">
+        <img loading="lazy" src="{{ theme.link }}/assets/svg/ico/comments.svg" />
+    </figure>
+
+    <span class="label">
+    {{ post.comment_count }} 
+    
+    {% if post.comment_count == 1  %} 
+        {{ __('komentarz', 'theme') }}
+    {% elseif post.comment_count|last in ['2', '3', '4']  %}
+        {{ __('komentarze', 'theme') }}
+    {% else %}
+        {{ __('komentarzy', 'theme') }}
+    {% endif %}
+    </span>
+
+</div>

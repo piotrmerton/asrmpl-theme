@@ -1,0 +1,31 @@
+<li id="comment-{{ comment.comment_ID }}" class="list__item item--comment">
+    <div class="comment__meta">
+        <figure>
+            {{ avatar }}
+        </figure>
+
+        <div class="comment__author">{{ author }}</div>
+
+        <div class="comment__date">
+
+            {% if date( comment.comment_date|date('U') ) < date('-1 day') %}
+                <span class="date">{{ comment_date }}, {{ comment_time }}</span>
+            {% else %}
+                <span class="date">{{ ago }}</span> <span class="label">{{ __('temu', 'theme') }}</span>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <div class="comment__body">
+        <p>{{ comment_text }}</p>
+    </div>
+
+    {% if comment.comment_approved and comment_reply_link %}
+        <div class="comment__reply">
+            {{ comment_reply_link }}
+        </div>
+    {% endif %}
+    
+</li>

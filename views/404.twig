@@ -1,0 +1,23 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--page-not-found">
+
+        <section class="page__layout">
+
+                <main class="layout__main">
+
+                    <div class="content__title text--center">
+                        <h1>{{ __('Przepraszamy. Strona o podanym adresie nie istnieje', 'theme' ) }}</h1>
+                    </div>
+
+                    <a class="button button--yellow button--center" href="{{ site.url }}">{{ __('Przejdź na stronę główną', 'theme') }}</a>
+
+                </main>
+
+            
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

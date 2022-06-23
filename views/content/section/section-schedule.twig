@@ -1,0 +1,25 @@
+<section class="content__section section-schedule">
+    <div class="section__grid">
+        <div class="grid__item item--last-game">
+            <h3 class="header--with-border">{{ __('Ostatni mecz', 'theme') }}</h3>
+            <ul class="games__list list--last-game">
+                {% for game in latest_game %}
+                    <li class="list__item item--game">
+                        {% include "components/scoreboard.twig" with { 'game' : game.data, 'date_format' : 'l, j F Y, H:i' } %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="grid__item item--upcoming-games">
+            <h3 class="header--with-border">{{ __('Najbliższe spotkanie', 'theme') }}</h3>
+            <ul class="games__list list--upcoming-games">
+                {% for game in upcoming_games|slice(0, 2) %}
+                    <li class="list__item item--game">
+                        {% include "components/scoreboard.twig" with { 'game' : game.data, 'date_format' : 'l, j F Y' } %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

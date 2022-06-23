@@ -1,0 +1,41 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--squad">
+        
+        <section class="content__title squad__title text--white">
+            <figure class="squad__logo">
+                <img loading="lazy" src="{{ theme.link }}/assets/svg/crest/asroma.svg" />
+            </figure>
+            <h1>{{ __('Kadra AS Roma', 'theme') }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            {% include "components/breadcrumbs.twig" %}
+
+            <ul class="squad__list">
+
+            {% for player_group in squad %}
+
+                <li class="list__item item--group">
+
+                    <h3 class="header--with-border">{{ player_group.labels.plural }}</h3>
+
+                    <ul class="players__grid">
+                        {% for player in player_group.players %}
+                            {% include "partials/item-player.twig" %}
+                        {% endfor %}
+                    </ul>
+
+                </li>
+
+            {% endfor %}
+
+            </ul>
+
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

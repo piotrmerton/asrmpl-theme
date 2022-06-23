@@ -1,0 +1,86 @@
+{
+    "key": "group_6216dc3b68b42",
+    "title": "Drużyna",
+    "fields": [
+        {
+            "key": "field_6216dc4317808",
+            "label": "Emblemat",
+            "name": "logo",
+            "type": "image",
+            "instructions": "Herb drużyny w formacie 1:1",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "url",
+            "preview_size": "small",
+            "min_width": 128,
+            "min_height": 128,
+            "min_size": "",
+            "max_width": 480,
+            "max_height": 480,
+            "max_size": "",
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
+        },
+        {
+            "key": "field_6216dd1a17809",
+            "label": "Kraj",
+            "name": "country",
+            "type": "taxonomy",
+            "instructions": "Możesz przypisać drużynę do kraju. Aktualnie nie będzie to nigdzie wyświetlane, ale jest pomocne w celu filtrowania drużyn w Panelu Administracyjnym.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "country",
+            "field_type": "select",
+            "max": "",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "acfe_field_group_condition": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1645708589
+}

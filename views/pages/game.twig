@@ -1,0 +1,74 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--game">
+
+        {% include "components/scoreboard.twig" with { 'class' : 'scoreboard--big', 'render_links' : true } %}
+
+            {% if post.content or post.meta('youtube_id') or match_report %}
+
+                <section class="page__layout">
+                    <div class="layout__grid">
+
+                        <main class="layout__main">
+
+                            {% include "components/breadcrumbs.twig" %}
+
+                            {% if match_report %}
+
+                                <ul class="game__report">
+                                    {% include "partials/item-post.twig" with { 
+                                        'post' : match_report, 
+                                        'post_label' : __('Raport meczowy', 'theme'),
+                                        'show_cta' : true,
+                                        'image_size' : 'large', 
+                                        'class' : 'post--featured', 'image_size' : 'large', 'show_placeholder' : true } 
+                                    %}
+                                </ul>
+
+                            {% endif %}
+
+                            <article class="game__desc text--rich">
+                                {{ post.content }}
+                            </article>
+
+                            {% if post.meta('youtube_id') %}
+                                <section class="game__highlights">
+                                    {% include "partials/youtube-embed.twig" with { 'id' : post.meta('youtube_id'), 'title' : post.title } %}
+                                </section>
+                            {% endif %}
+
+                        </main>
+
+                        <aside class="layout__side side--display-on-mobile">
+                            <div class="side__block">
+                                {% include "partials/game/game-related-posts.twig" %}
+                            </div>
+                        </aside>
+
+                    </div>
+                </section><!-- /page__layout -->
+                
+                {# show latest news but make sure they won't be displayed in side column as well #}
+                {% if has_related_posts %}
+                    {% embed  "content/section/section-archive.twig" with { 'section_cta_link' : related_tag ? related_tag.link : false } %}
+                        {% block section_content %}
+                            {% include "partials/game/game-related-posts.twig" with { 'grid' : 'horizontal', 'has_related_posts' : false } %}
+                        {% endblock %}
+                    {% endembed %}
+                {% endif %}
+
+            {% else %}
+
+                {% embed  "content/section/section-archive.twig" %}
+                    {% block section_content %}
+                        {% include "partials/game/game-related-posts.twig" with { 'grid' : 'horizontal' } %}
+                    {% endblock %}
+                {% endembed %}
+
+            {% endif %}
+
+    </div>
+
+{% endblock %}

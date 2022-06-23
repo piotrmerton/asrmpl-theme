@@ -1,0 +1,13 @@
+<section id="comments" class="section-comments">
+
+    {% if hide_section_title is not defined %}
+        <div class="section__title">
+            <h2 class="header--with-border">{{ __('Komentarze', 'theme') }}</h2>
+        </div>
+    {% endif %}
+
+    {# default WordPress template comments #}
+    {{ function('comments_template') }}
+
+
+</section>

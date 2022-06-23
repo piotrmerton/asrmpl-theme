@@ -1,0 +1,256 @@
+
+.ui-comments {
+    @media (min-width: $breakpoint_mobile) {
+        scroll-margin-top: 6rem;
+    }
+}
+
+.comments__list {
+
+    //default WordPres class, see Walker_Comment
+    .children {
+        background: #FBFBFB;
+        > li {
+            padding-left: 4rem;
+        }
+    }
+}
+
+.item--comment {
+    list-style: none;
+    border: 1px solid #EDEDED;
+    padding: 1.5rem 2rem;
+    margin-top: -1px;
+
+    @media (min-width: $breakpoint_mobile + 1px) {
+        scroll-margin-top: 6rem;
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        padding: 1.5rem 1rem;
+    }
+
+}
+
+.comment__meta {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: .875em;
+    img {
+        width: 2rem;
+    }
+
+}
+
+.comment__author {
+    font-weight: 600;
+    color: $black;
+    margin: 0 1rem;
+}
+.comment__date {
+    font-size: .875em;
+    color: $text_silver_light;
+}
+.comment__body {
+    font-weight: 400;
+    p {
+        margin: 0;
+    }
+}
+.comment__reply {
+    font-weight: 400;
+    font-size: .875em;
+    margin-top: 1rem;
+    
+    a {
+        color: #828282;
+        text-decoration: underline;
+
+        @media (hover: hover) {
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+}
+
+//default WordPress markup from now on:
+
+.comment-reply-title {
+    display: none;
+}
+
+.must-log-in {
+    a {
+        text-decoration: underline;
+    }
+}
+
+.comment-form {
+    
+    margin: 3rem 0;
+
+    .fieldset {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+
+        p {
+            margin: 0;
+        }
+
+        .logged-in-as {
+            display: none;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        border-bottom: .25rem solid $silver;
+        resize: none;
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        margin: 2rem 0;
+    }
+
+    @media (max-width: $breakpoint_phone-big) {
+        .fieldset {
+            display: grid;
+            grid-gap: .5rem;
+        }
+        textarea {
+            font-size: 1em;
+            border: .25rem solid $silver;
+            margin-bottom: 0;
+        }
+    }    
+
+    //auto grow textarea solution: https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/
+    .comment-form-comment { //WP native markup: textarea wrapper
+        // easy way to plop the elements on top of each other and have them both sized based on the tallest one's height        
+        display: grid;
+
+        &::after {
+            // Note the weird space! Needed to preventy jumpy behavior
+            content: attr(data-replicated-value) " ";
+
+            // This is how textarea text behaves
+            white-space: pre-wrap;
+
+            // Hidden from view, clicks, and screen readers
+            visibility: hidden;
+        }
+
+        > textarea {
+            // You could leave this, but after a user resizes, then it ruins the auto sizing
+            resize: none;    
+            
+            // Firefox shows scrollbar on growth, you can hide like this.
+            overflow: hidden;            
+        }
+
+        > textarea,
+        &::after {
+            // Identical styling required!
+            border-bottom: .25rem solid $silver;
+            padding: .5rem;
+
+            // Place on top of each other
+            grid-area: 1 / 1 / 2 / 2;            
+        }
+
+        &.focused,
+        > textarea:focus {
+            border-color: $black;
+        }
+    }
+}
+
+
+.comments__list {
+    .comment-reply-title {
+        display: block;
+    }
+    .comment-respond {
+        display: grid;
+    
+        background: $silver;
+        padding: 1rem;
+        
+        .comment-reply-title {
+            font-size: 1.125em;
+            font-weight: 500;
+            margin-bottom: 0;
+            order: 2;
+        }
+        form {
+            order: 1;
+            margin: 0 0 .5rem;
+        }
+        textarea {
+            font-size: 1em;
+        }
+        input[type=submit] {
+            font-size: .875em;
+        }
+        @media (max-width: $breakpoint_phone-big) {
+            .comment-reply-title {
+                text-align: center;
+            }
+        }
+
+        .focused,
+        textarea:focus {
+            border-color: $silver !important;
+        }
+
+    }
+}
+
+
+//WordPress default markup
+.comments-pagination {
+    margin-top: 2rem;
+    h2 {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: .25rem;
+
+        > * {
+            display: flex;
+            height: 2.25rem;
+            font-weight: 600;
+            font-size: .875em;
+            padding: 0 .75rem;
+            justify-content: center;
+            align-items: center;       
+            color: #636363;     
+
+        }
+        a {
+            background: $silver;
+            color: #636363;
+        }
+        .current {
+            background: $yellow;
+            color: $black;
+        }
+        .next,
+        .prev {
+            //flex-basis: 100%;
+            
+        }
+    }
+
+}

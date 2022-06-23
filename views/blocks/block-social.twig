@@ -1,0 +1,26 @@
+<ul class="block-social{% if class %} {{ class }}{% endif %}">
+    <li>
+        <a href="https://www.facebook.com/officialasromapl/" title="{{ __('ASRoma.pl na Facebooku', 'theme')}}">
+            <figure class="ui-ico ico--facebook">
+                {{ source('assets/svg/ico/facebook.svg', ignore_missing = false) }}
+            </figure>   
+            <span class="label">{{ __('Oficjalny profil @ASRoma.pl na Facebooku.', 'theme') }}</span>
+        </a>
+    </li>
+    <li>
+        <a href="https://twitter.com/ASRomaPL" title="{{ __('ASRoma.pl na Twitterze', 'theme')}}">
+            <figure class="ui-ico ico--facebook">
+                {{ source('assets/svg/ico/twitter.svg', ignore_missing = false) }}
+            </figure>   
+            <span class="label">{{ __('Oficjalny profil @ASRomaPL na Twitterze.', 'theme') }}</span>
+        </a>
+    </li>    
+    <li>
+        <a href="https://www.youtube.com/user/asromapol" title="{{ __('ASRoma.pl na YouTube', 'theme')}}">
+            <figure class="ui-ico ico--youtube">
+                {{ source('assets/svg/ico/youtube.svg', ignore_missing = false) }}
+            </figure>   
+            <span class="label">{{ __('Oficjalny kanał @ASRomaPL na YouTube.', 'theme') }}</span>
+        </a>
+    </li>				
+</ul>

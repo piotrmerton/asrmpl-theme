@@ -1,0 +1,9 @@
+<figure class="team__crest">
+    {% if team.crest %}
+        <source srcset="{{ team.crest|towebp }}" type="image/webp">  
+        <source srcset="{{ team.crest }}" type="image/jpeg"> 
+        <img loading="lazy" src="{{ team.crest }}" alt="{{ team.name }}" />
+    {% else %}
+        <img loading="lazy" src="{{ theme.link }}/assets/img/team-crest-placeholder.png" />
+    {% endif %}
+</figure>

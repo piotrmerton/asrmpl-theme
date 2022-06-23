@@ -1,0 +1,32 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--videos">
+        
+        <section class="content__title text--white">
+            <h1>{{ __('Bramki i skróty meczów AS Roma', 'theme') }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            <main class="layout__main">
+
+                {% include "components/breadcrumbs.twig" %}
+
+                <ul class="videos__grid grid--archive">
+                    {% for video in posts %}
+                        {% include 'partials/item-video.twig' %}
+                    {% endfor %}
+                </ul>
+
+
+                {% include 'components/pagination.twig' %}
+
+            </main>
+
+
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}

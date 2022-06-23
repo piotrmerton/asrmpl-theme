@@ -1,0 +1,189 @@
+@import '../utilities/variables';
+
+.content--history {
+
+  
+
+}
+
+.history__banner {
+    min-height: 25rem;
+
+    .banner__content {
+        display: grid;
+        justify-content: center;
+    }
+
+    .club__logo {
+        img {
+            height: 8rem;
+        }
+    }
+
+}
+
+.timeline__title {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin: 0 0 2rem;
+
+    .label {
+        font-size: 1.125em;
+    }
+    h2 {
+        font-size: 6em;
+        line-height: 1;
+        letter-spacing: -.01em;
+    }
+
+    &.title--start {
+        h2 {
+            font-size: 8em;
+        }
+    }
+
+    @media (max-width: $breakpoint_mobile) {
+        display: none;
+    }
+} 
+
+
+
+.history__logos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    img {
+        height: 5rem;
+    }
+}
+
+.posts__list {
+    &.list--history {
+        
+        background-position: top;
+        background-repeat: repeat-y;
+
+        .post__cover {
+            width: auto;
+            height: auto;
+            margin-right: 0;
+        }
+
+        @media (min-width: $breakpoint_mobile + 1px) {
+            display: grid;
+            padding: 0 2rem;
+
+            .item--post {
+                    
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    margin: 0;
+                    border: 0;
+
+                    .item__content {
+                        display: block;
+                        //max-width: 30rem;
+                        margin: 0 auto;
+                        grid-column-start: 1;
+                    }
+                    .item__title {
+                        grid-column-start: 2;
+                        
+                    }
+                
+                h3 {
+                    font-size: 1.5em;
+                    max-width: 33rem;
+                }
+                p {
+                    font-size: 1em;
+                }
+
+                .item__content {
+                   display: flex;
+                   align-items: center;
+                   gap: 1rem;
+                }
+                .item__trail {
+                    flex-basis: 20%;
+                    flex-shrink: 0;
+                    
+                    position: relative;
+
+                    &::before {
+                        display: block;
+                        content: '';
+                        position: absolute;
+                        width: calc(100% - 3.5rem);
+                        height: 1px;
+                        border-bottom: 1px dotted #999;
+                        top: 6px;
+                        left: 0;
+                    }
+
+                    &::after {
+                        display: block;
+                        content: '';
+                        border: .2rem solid $darkred;
+                        width: .5rem;
+                        height: .5rem;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        right: 2rem;
+                    }
+                }
+
+                &:nth-child(even) {
+                    .item__title {
+                        grid-column-start: 1;
+                    }
+                    .item__content {
+                        grid-column-start: 2;
+                    }
+                    .item__trail {
+                        order: 1;
+
+                        &::before {
+                            left: auto;
+                            right: 0;
+                        }
+                        &::after {
+                            right: 0;
+                            left: 2rem;
+                        }
+                    }
+                    a {
+                        order: 2;
+                    }
+                }
+            }
+            .post__content {
+                display: grid;
+                align-items: center;
+                grid-auto-rows: auto;
+                justify-content: center;
+                
+            }
+            .item__title {
+                grid-row-start: 1;
+                
+                display: grid;
+                align-items: center;
+                justify-items: center;
+            }
+            .post__cover {
+                display: none;
+                
+            }
+
+        }
+
+        @media (max-width: $breakpoint_mobile) {
+            background-image: none !important;
+        }
+
+
+    }
+}

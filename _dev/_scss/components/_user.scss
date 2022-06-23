@@ -1,0 +1,24 @@
+//everything related to user login, registration and profile pages, markup based on theme-my-login
+
+.ui-user {
+
+    form {
+        max-width: 30rem;
+        margin: 0 auto;
+
+        label {
+            color: #999;
+            font-weight: 400;
+            font-size: .875em;
+        }
+
+        input {
+            &:focus {
+                border-color: $black;
+            }
+        }
+    }
+
+
+
+}

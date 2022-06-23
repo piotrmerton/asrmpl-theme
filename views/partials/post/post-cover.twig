@@ -1,0 +1,14 @@
+<figure class="{{ class ? class : 'post__cover' }} cover cover--overlay">
+    <picture>
+
+        <source media="(min-width: 961px)" srcset="{{ post.thumbnail.src(image_size)|towebp }}" type="image/webp">
+        <source media="(min-width: 961px)" srcset="{{ post.thumbnail.src(image_size) }}" type="image/jpeg">
+
+        <source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('thumbnail')|towebp }}" type="image/webp">
+        <source media="(max-width: 960px)" srcset="{{ post.thumbnail.src('thumbnail') }}" type="image/jpeg">  
+
+        <img loading="lazy" src="{{ post.thumbnail.src(image_size) }}" width="1280" height="720" alt="{{ post.thumbnail.alt }}"/>
+    </picture>
+
+    <figcaption class="image__credits">{{ post.thumbnail.caption }}</figcaption>
+</figure>

@@ -1,0 +1,81 @@
+{
+    "key": "group_621dee1a5f657",
+    "title": "Film",
+    "fields": [
+        {
+            "key": "field_621dee1db8c35",
+            "label": "ID skrótu meczu na YouTube",
+            "name": "youtube_id",
+            "type": "text",
+            "instructions": "ID filmu na YouTube to część adresu URL znajdująca się po parametrze \"v\", np. dla adresu https:\/\/www.youtube.com\/watch?v=PXvl5co-920 jest to PXvl5co-920",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "default_value": "",
+            "placeholder": "np. PXvl5co-920",
+            "prepend": "",
+            "append": "",
+            "maxlength": 20,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_621def9b21ebe",
+            "label": "Miniatura",
+            "name": "cover_image",
+            "type": "image",
+            "instructions": "Zdjęcie-miniatura dodawanego filmu. Uwaga: miniatura zostanie przycięta do proporcji 16:9 (proporcje odpowiadające miniaturom z YT), dlatego najlepiej wgrać zdjęcie o wymiarach np. 1280x720 lub 960x540px.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "array",
+            "preview_size": "video",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "acfe_field_group_condition": 0,
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "video"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1647511368
+}

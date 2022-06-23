@@ -1,0 +1,16 @@
+<div class="broadcaster__layout">
+    
+    {% if broadcaster.logo %}
+    {# <span class="label">{{ __('Transmisja w', 'theme') }}</span> #}
+    <figure class="broadcaster__logo">
+        <picture>
+            <source srcset="{{ broadcaster.logo|towebp }}" type="image/webp">  
+            <source srcset="{{ broadcaster.logo }}" type="image/jpeg">  
+            <img loading="lazy" src="{{ broadcaster.logo }}" width="128" height="64" alt="{{ broadcaster.name }}" title="{{ __('Transmisja w', 'theme') }} {{ broadcaster.name }}" />
+        </picture>
+    </figure>
+    {% else %}
+        <span class="broadcaster__name">{{ __('Transmisja w', 'theme') }} {{ broadcaster.name }}</span>
+    {% endif %}
+
+</div>

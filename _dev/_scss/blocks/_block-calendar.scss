@@ -1,0 +1,26 @@
+.block-calendar {
+    background: $red;
+
+    h3 {
+        font-size: 1.25em;
+        font-weight: 500;
+        border-bottom: 2px solid #7F0824;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+    li {
+        list-style: disc;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    p {
+        line-height: 1.5;
+        margin: 0;
+    }
+}

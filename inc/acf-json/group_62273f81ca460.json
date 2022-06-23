@@ -1,0 +1,279 @@
+{
+    "key": "group_62273f81ca460",
+    "title": "Ustawienia strony",
+    "fields": [
+        {
+            "key": "field_6227433e87c39",
+            "label": "Ustawienia globalne",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_6227400cb4c89",
+            "label": "Klucz API",
+            "name": "api_football_key",
+            "type": "text",
+            "instructions": "Unikalny klucz API potrzebny do komunikacji z platformą api-football.com. Dostępny w zakładce Account \/ My Access w dashboard.api-football.com.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_62273f8db4c88",
+            "label": "Aktualny sezon",
+            "name": "current_season",
+            "type": "number",
+            "instructions": "Aktualny sezon w czterocyfrowym formacie YYYY - pierwszy rok aktualnie trwającego sezonu, np. dla sezonu 2021\/2022 wpisz 2021. Jest to kluczowe ustawienie dla wyświetlanych danych takich jak Tabela Ligowa, Terminarz, Wyniki itd.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "required_message": "",
+            "default_value": 2021,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_6227435587c3a",
+            "label": "Trofea",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_6227436387c3b",
+            "label": "Sukcesy",
+            "name": "honours",
+            "type": "group",
+            "instructions": "Liczba tytułów widoczna jest na stronie głównej w górnej sekcji pod nawigacją.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_6227437787c3c",
+                    "label": "Ilość tytułów Serie A",
+                    "name": "scudetto",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_6227439087c3d",
+                    "label": "Ilość tytułów Coppa Italia",
+                    "name": "coccarda",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        },
+        {
+            "key": "field_623451cf23085",
+            "label": "Stopka",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "no_preference": 0,
+            "acfe_field_group_condition": 0
+        },
+        {
+            "key": "field_623451da23086",
+            "label": "Teksty w stopce",
+            "name": "footer",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "acfe_seamless_style": 0,
+            "acfe_group_modal": 0,
+            "acfe_field_group_condition": 0,
+            "sub_fields": [
+                {
+                    "key": "field_62345d4c23089",
+                    "label": "Prawa autorskie",
+                    "name": "copyrights",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "2003-2022 © Wszystkie prawa zastrzeżone.",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62345cdc23087",
+                    "label": "Opis",
+                    "name": "desc",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "Jesteśmy Polskim nieoficjalnym serwisem informacyjnym zrzeszającym polskich fanów AS Roma, nieprzerwanie od 2003 roku. Logotyp oraz materiały związane z AS Roma (TM) są wykorzystywane za uprzejmą zgodą AS Roma S.p.A.",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                },
+                {
+                    "key": "field_62345cff23088",
+                    "label": "Uwagi",
+                    "name": "disclaimer",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "required_message": "",
+                    "default_value": "Strona korzysta z informacji przechowywanych w plikach cookies w celach funkcjonalnych oraz statystycznych.",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "acfe_field_group_condition": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1647598958
+}

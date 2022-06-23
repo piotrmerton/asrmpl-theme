@@ -1,0 +1,38 @@
+{% extends "layout/base.twig" %}
+
+{% block body %}
+
+    <div class="content__main content--page">
+
+        
+        <section class="content__title post__title text--white">
+            <h1>{{ page.title }}</h1>
+        </section>
+
+        <section class="page__layout">
+
+            <div class="layout__grid">
+
+                <main class="layout__main">
+
+                    {% include "components/breadcrumbs.twig" %}
+
+                    <article class="page__content text--rich">
+                        {{ page.content }}
+                    </article>
+
+                </main>
+                
+                <aside class="layout__side">
+
+                    <div class="side__block">
+                        {% include "blocks/block-posts.twig" %}
+                    </div>
+
+                </aside>
+
+            </div>
+        </section><!-- /page__layout -->
+    </div>
+
+{% endblock %}
