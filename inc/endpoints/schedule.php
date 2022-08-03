@@ -9,9 +9,9 @@ use Theme\Game;
 
  */
 
-function theme_rest_schedule() {
-
-    /** 
+function theme_rest_schedule()
+{
+    /**
      * @todo: can we optimize this to retrieve games with one query?
      */
     $last_game = Game::getLatestGames();
@@ -20,16 +20,15 @@ function theme_rest_schedule() {
     $schedule = array_merge($last_game, $upcoming_games);
 
     return $schedule;
-
 }
 
 /*
-*
-* Register Rest API Endpoint
-* Route: {URL}/wp-json/posts/v1/{endpoint}
-*
-*/
-register_rest_route( 'theme/v1', '/schedule/', array(
-    'methods' => 'GET',
-    'callback' => 'theme_rest_schedule'
-) );
+ *
+ * Register Rest API Endpoint
+ * Route: {URL}/wp-json/posts/v1/{endpoint}
+ *
+ */
+register_rest_route("theme/v1", "/schedule/", [
+    "methods" => "GET",
+    "callback" => "theme_rest_schedule",
+]);

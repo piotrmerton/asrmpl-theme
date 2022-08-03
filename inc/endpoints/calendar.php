@@ -12,30 +12,27 @@ use Theme\Game;
 
  */
 
-function theme_rest_calendar() {
-
-    $events = get_posts(
-        array(
-            'post_type' => 'event',
-            'posts_per_page' => 5,
-            'date_query' => array(
-                'month' => date( 'n' ),
-                'day' => date( 'j' ),
-            ),
-        )
-    );
+function theme_rest_calendar()
+{
+    $events = get_posts([
+        "post_type" => "event",
+        "posts_per_page" => 5,
+        "date_query" => [
+            "month" => date("n"),
+            "day" => date("j"),
+        ],
+    ]);
 
     return $events;
-
 }
 
 /*
-*
-* Register Rest API Endpoint
-* Route: {URL}/wp-json/posts/v1/{endpoint}
-*
-*/
-register_rest_route( 'theme/v1', '/calendar/', array(
-    'methods' => 'GET',
-    'callback' => 'theme_rest_calendar'
-) );
+ *
+ * Register Rest API Endpoint
+ * Route: {URL}/wp-json/posts/v1/{endpoint}
+ *
+ */
+register_rest_route("theme/v1", "/calendar/", [
+    "methods" => "GET",
+    "callback" => "theme_rest_calendar",
+]);

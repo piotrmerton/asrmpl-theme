@@ -7,7 +7,7 @@
 
 $context = Timber::get_context();
 
-$context['page'] =  Timber::get_post();
-$context['show_section_social'] =  false;
+$context["page"] = Timber::get_post();
+$context["show_section_social"] = false;
 
-Timber::render( 'pages/user/profile.twig', $context );
+Timber::render("pages/user/profile.twig", $context);

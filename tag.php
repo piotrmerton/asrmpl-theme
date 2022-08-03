@@ -1,9 +1,8 @@
 <?php
 
-$postType = get_query_var('post_type');
-
+$postType = get_query_var("post_type");
 
 $context = Timber::get_context();
-$context['tag'] = new Timber\Term();
+$context["tag"] = new Timber\Term();
 
-Timber::render( 'pages/tag.twig', $context );
+Timber::render("pages/tag.twig", $context);
