@@ -1,102 +1,93 @@
 .page__layout {
-    background: #fff;
-    padding: 3rem;
+  background: #fff;
+  padding: 3rem;
 
-    @media (min-width: $breakpoint_desktop + 1px) {
-        .layout__grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-    
-            .layout__main {
-                grid-column: auto / span 8;
-                max-width: 64rem;
-            }
-            .layout__side {
-                grid-column: 9 / -1;
-                width: 100%;
-                max-width: 30rem;
-                justify-self: end;
-                
-                //only needed when viewport_width is smaller than 1650
-                padding-left: 2rem;
-                
-                &.side--compact {
-                    grid-column-start: 10;
-                    max-width: 30rem;
-                    padding: 0;
-                }
-            }
+  @media (min-width: $breakpoint_desktop + 1px) {
+    .layout__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
 
+      .layout__main {
+        grid-column: auto / span 8;
+        max-width: 64rem;
+      }
+      .layout__side {
+        grid-column: 9 / -1;
+        width: 100%;
+        max-width: 30rem;
+        justify-self: end;
 
-        }
-    }
-
-    @media (max-width: $breakpoint_viewport) {
+        //only needed when viewport_width is smaller than 1650
         padding-left: 2rem;
-        padding-right: 2rem;
 
-    }
-
-    // @media (max-width: $viewport_width) and (min-width: $breakpoint_desktop + 1px) {
-    //     .layout__grid {
-    //         .layout__side {
-    //             padding-left: 2rem;
-    //             grid-column: 9 / -1;
-    //         }           
-    //     }
-
-    // }
-
-    @media (max-width: $breakpoint_laptop) {
-        padding: 2rem;
-    }
-
-    @media (max-width: $breakpoint_hd) {
-        padding: 2rem 1rem;
-    }
-
-    @media (max-width: $breakpoint_desktop) {
-        .layout__side {
-            padding: 2rem 0;
-            &:not(.side--display-on-mobile) {
-                display: none;
-            }
-            
+        &.side--compact {
+          grid-column-start: 10;
+          max-width: 30rem;
+          padding: 0;
         }
-    }    
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint_viewport) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  // @media (max-width: $viewport_width) and (min-width: $breakpoint_desktop + 1px) {
+  //     .layout__grid {
+  //         .layout__side {
+  //             padding-left: 2rem;
+  //             grid-column: 9 / -1;
+  //         }
+  //     }
+
+  // }
+
+  @media (max-width: $breakpoint_laptop) {
+    padding: 2rem;
+  }
+
+  @media (max-width: $breakpoint_hd) {
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: $breakpoint_desktop) {
+    .layout__side {
+      padding: 2rem 0;
+      &:not(.side--display-on-mobile) {
+        display: none;
+      }
+    }
+  }
 }
 
 .layout__side {
-
-
-    h4 {
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #C1C1C1;
-    }
+  h4 {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #c1c1c1;
+  }
 }
 
 .side__block {
+  position: relative;
 
-    position: relative;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
-    &:not(:last-child) {
-        margin-bottom: 2rem;
+  &:not(.block--no-padding) {
+    padding: 1.5rem;
+    @media (max-width: $breakpoint_mobile) {
+      padding: 1.5rem 1rem;
     }
+  }
+  &:not(.block--no-border) {
+    border: 1px solid $silver;
+  }
 
-    &:not(.block--no-padding) {
-        padding: 1.5rem;
-        @media (max-width: $breakpoint_mobile) {
-            padding: 1.5rem 1rem;
-        }
-    }
-    &:not(.block--no-border) {
-        border: 1px solid $silver;
-    }
-
-    .button {
-        width: 100%;
-        margin-bottom: 0;
-    }
-
+  .button {
+    width: 100%;
+    margin-bottom: 0;
+  }
 }
-

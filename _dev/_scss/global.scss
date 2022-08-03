@@ -1,69 +1,69 @@
 //Notice: for now everything imported here will be inlined in <head>
 //@todo: "tree shaking", i.e. move page-specific partials to external files and load them either via twig templates with <link> or via wp_enqueue_style
 
-@import 'base/reset';
+@import "base/reset";
 
-@import 'utilities/variables';
-@import 'utilities/reusables';
-@import 'utilities/mixins';
+@import "utilities/variables";
+@import "utilities/reusables";
+@import "utilities/mixins";
 
-@import 'base/fonts';
-@import 'base/generic';
-@import 'base/form';
-@import 'base/viewport';
-@import 'base/text';
-@import 'base/typography';
-@import 'base/ui';
+@import "base/fonts";
+@import "base/generic";
+@import "base/form";
+@import "base/viewport";
+@import "base/text";
+@import "base/typography";
+@import "base/ui";
 
-@import 'layout/grid';
-@import 'layout/layout';
-@import 'layout/header';
-@import 'layout/content';
-@import 'layout/footer';
+@import "layout/grid";
+@import "layout/layout";
+@import "layout/header";
+@import "layout/content";
+@import "layout/footer";
 
-@import 'blocks/block-calendar';
-@import 'blocks/block-injuries';
-@import 'blocks/block-serie-a';
-@import 'blocks/block-social';
-@import 'blocks/block-tags';
-@import 'blocks/block-user';
+@import "blocks/block-calendar";
+@import "blocks/block-injuries";
+@import "blocks/block-serie-a";
+@import "blocks/block-social";
+@import "blocks/block-tags";
+@import "blocks/block-user";
 
-@import 'components/banner';
-@import 'components/button';
-@import 'components/breadcrumbs';
-@import 'components/search';
-@import 'components/pagination';
-@import 'components/comments';
-@import 'components/cover';
-@import 'components/nav/nav-top';
-@import 'components/tabs';
-@import 'components/scoreboard';
-@import 'components/competition';
-@import 'components/standings';
-@import 'components/shoutbox';
-@import 'components/user';
+@import "components/banner";
+@import "components/button";
+@import "components/breadcrumbs";
+@import "components/search";
+@import "components/pagination";
+@import "components/comments";
+@import "components/cover";
+@import "components/nav/nav-top";
+@import "components/tabs";
+@import "components/scoreboard";
+@import "components/competition";
+@import "components/standings";
+@import "components/shoutbox";
+@import "components/user";
 
-@import 'partials/listing/game';
-@import 'partials/listing/player';
-@import 'partials/listing/post';
-@import 'partials/listing/schedule';
-@import 'partials/listing/video';
+@import "partials/listing/game";
+@import "partials/listing/player";
+@import "partials/listing/post";
+@import "partials/listing/schedule";
+@import "partials/listing/video";
 
-@import 'partials/post/posts-list';
-@import 'partials/post/posts-grid';
-@import 'partials/player/playerstats';
+@import "partials/post/posts-list";
+@import "partials/post/posts-grid";
+@import "partials/player/playerstats";
 
-@import 'pages/post';
-@import 'pages/player';
-@import 'pages/game';
-@import 'pages/squad';
-@import 'pages/competition';
-@import 'pages/shoutbox';
+@import "pages/post";
+@import "pages/player";
+@import "pages/game";
+@import "pages/squad";
+@import "pages/competition";
+@import "pages/shoutbox";
 
-@import 'content/section/section-archive';
-@import 'content/section/section-articles';
-@import 'content/section/section-featured-posts';
-@import 'content/section/section-honours';
-@import 'content/section/section-schedule';
-@import 'content/section/section-social';
-@import 'content/section/section-videos';
+@import "content/section/section-archive";
+@import "content/section/section-articles";
+@import "content/section/section-featured-posts";
+@import "content/section/section-honours";
+@import "content/section/section-schedule";
+@import "content/section/section-social";
+@import "content/section/section-videos";

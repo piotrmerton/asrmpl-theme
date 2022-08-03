@@ -1,79 +1,79 @@
-@import 'utilities/variables';
+@import "utilities/variables";
 
 //  1. Login overrides
 body.login {
-    background: $darkred;
+  background: $darkred;
 }
 
 .login {
-    h1 {
-        a {
-            background-image: url('../svg/logo.svg');
-            background-size: contain;
-            display: block;
-            width: auto;
-            height: 3rem;
-            
-        }
-        margin-bottom: 2rem;
+  h1 {
+    a {
+      background-image: url("../svg/logo.svg");
+      background-size: contain;
+      display: block;
+      width: auto;
+      height: 3rem;
     }
-    form {
-        border: 8px solid #dbdbdb;
-        background: #dbdbdb;
-        padding: 32px 24px;
-        -webkit-box-shadow: none;
-                box-shadow: none;        
-    }
+    margin-bottom: 2rem;
+  }
+  form {
+    border: 8px solid #dbdbdb;
+    background: #dbdbdb;
+    padding: 32px 24px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
 }
 
 #login {
-    width: 100%;
-    max-width: 400px;    
+  width: 100%;
+  max-width: 400px;
 }
 #loginform {
-    label {
-
+  label {
+  }
+  input {
+    &[type="submit"] {
+      height: auto;
+      border: 0;
+      font-weight: bold;
+      background-color: $yellow;
+      color: $black;
+      padding: 0.5rem 2rem;
+      border-radius: 1.5rem;
+      text-transform: none;
+      box-shadow: none;
+      text-shadow: none;
+      letter-spacing: normal;
     }
-    input {
-        &[type='submit'] {
-            height: auto;
-            border: 0;
-            font-weight: bold;
-            background-color: $yellow;
-            color: $black;
-            padding: .5rem 2rem;
-            border-radius: 1.5rem;
-            text-transform: none;
-            box-shadow: none;
-            text-shadow: none;  
-            letter-spacing: normal;       
-        }
-        &:not([type='submit']) {
-            &:focus {
-                border-color: transparent;
-                box-shadow: 0;                
-            }
-        }
+    &:not([type="submit"]) {
+      &:focus {
+        border-color: transparent;
+        box-shadow: 0;
+      }
     }
+  }
 }
 
-#user_login, #user_pass {
-    background-color: white;
-    background-position: 95% 50%;
-    background-repeat: no-repeat;
+#user_login,
+#user_pass {
+  background-color: white;
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
 }
 
-.login #backtoblog a, .login #nav a {
-    color: #fff;
+.login #backtoblog a,
+.login #nav a {
+  color: #fff;
 }
 #nav a:hover,
 #backtoblog a:hover {
-    text-decoration: underline;
-    color: $yellow !important;
+  text-decoration: underline;
+  color: $yellow !important;
 }
 
 .acf-postbox {
-    .acf-hndle-cog {
-        display: none !important;
-    }
+  .acf-hndle-cog {
+    display: none !important;
+  }
 }

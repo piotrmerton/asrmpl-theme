@@ -1,89 +1,83 @@
 .videos__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
-    
-    @media (max-width: $breakpoint_laptop) {
-        grid-gap: 2rem 1rem;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
 
-    @media (max-width: $breakpoint_hd) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    @media (max-width: $breakpoint_mobile) {
-        grid-template-columns: 1fr 1fr;
-    }    
+  @media (max-width: $breakpoint_laptop) {
+    grid-gap: 2rem 1rem;
+  }
 
-    
+  @media (max-width: $breakpoint_hd) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: $breakpoint_mobile) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .item--video {
-    
-    .video__cover {
+  .video__cover {
+    display: grid;
+    margin-bottom: 0.5rem;
+    background: $yellow;
 
-        display: grid;
-        margin-bottom: .5rem;
-        background: $yellow;
-
-        > * {
-            grid-column: 1 / 1;
-            grid-row: 1;
-        }
-
-        .cover__image {
-            position: relative;
-            img {
-                position: static;
-            }
-        }
-
-        .cover__ico {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-
-            img {
-                width: 33%;
-                height: 33%;
-            }
-        }
-
+    > * {
+      grid-column: 1 / 1;
+      grid-row: 1;
     }
+
+    .cover__image {
+      position: relative;
+      img {
+        position: static;
+      }
+    }
+
+    .cover__ico {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+
+      img {
+        width: 33%;
+        height: 33%;
+      }
+    }
+  }
+  .video__title {
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  @media (max-width: $breakpoint_mobile) {
     .video__title {
-        font-size: 1.25em;
-        font-weight: 600;
-        line-height: normal;
-    }    
-
-
-    @media (max-width: $breakpoint_mobile) {
-        .video__title {
-            font-size: 1em;
-        }
+      font-size: 1em;
     }
- 
-    @media (hover: hover) {
-        .video__cover {
-            .cover__image {
-                transition: all .2s;
-            }
-            img {
-                transition: all .2s;
-            }
-        }
-        &:hover {
-            .cover__image {
-                opacity: .66;
-            }
-            .cover__ico {
-                img {
-                    width: 40%;
-                    height: 40%;
-                }
-            }
-        }
+  }
+
+  @media (hover: hover) {
+    .video__cover {
+      .cover__image {
+        transition: all 0.2s;
+      }
+      img {
+        transition: all 0.2s;
+      }
     }
+    &:hover {
+      .cover__image {
+        opacity: 0.66;
+      }
+      .cover__ico {
+        img {
+          width: 40%;
+          height: 40%;
+        }
+      }
+    }
+  }
 }

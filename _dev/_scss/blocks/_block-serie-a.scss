@@ -1,14 +1,14 @@
 //serie a side block, markup: blocks/block-serie-a.scss
 
 .block-serie-a {
-    .block__cta {
-        padding: 0 2rem;
+  .block__cta {
+    padding: 0 2rem;
 
-        @media (max-width: $breakpoint_desktop) {
-            padding: 0 1rem;
-        }
+    @media (max-width: $breakpoint_desktop) {
+      padding: 0 1rem;
     }
-    .button {
-        margin: 0 0 2rem;
-    }
+  }
+  .button {
+    margin: 0 0 2rem;
+  }
 }

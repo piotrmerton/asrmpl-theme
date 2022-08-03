@@ -1,174 +1,158 @@
 /** Top Navigation embedded in views/layout/header; markup generated via wp_nav **/
 
 .nav--top {
-    
-    ul {
-        display: none;
+  ul {
+    display: none;
+  }
+
+  > ul {
+    display: block;
+  }
+
+  .nav__list {
+    a {
+      display: block;
+      font-weight: 600; //semi-bold
+      font-size: 0.875em;
+    }
+  }
+
+  .item--has-submenu {
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:after {
+        margin-left: 0.5rem;
+        @include submenu-indicator(0.25rem, #cd3f61);
+      }
     }
 
-    > ul {
+    &.menu--open {
+      > a {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+      .nav__submenu {
         display: block;
+      }
+    }
+  }
+
+  .item--search {
+    > a {
+      display: flex;
+      align-items: center;
+
+      .ui-ico {
+        height: 1rem;
+      }
     }
 
-    .nav__list {
-        a {
-            display: block;
-            font-weight: 600; //semi-bold
-            font-size: .875em;
-        }        
+    @media (max-width: $breakpoint_laptop_big) and (min-width: $breakpoint_mobile + 1px) {
+      .ui-ico {
+        margin: 0;
+      }
+      .label {
+        display: none;
+      }
     }
+  }
 
-    .item--has-submenu {
+  @media (min-width: $breakpoint_mobile + 1px) {
+    > ul {
+      display: flex;
+
+      > li {
         > a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          padding: 2rem 1rem;
 
-            &:after {
-                margin-left: .5rem;
-                @include submenu-indicator(.25rem, #cd3f61);
-            }                 
+          @media (min-width: $breakpoint_hd + 1px) {
+            padding: 2rem 1.5rem;
+          }
         }
 
-        &.menu--open {
+        > .submenu__list {
+          > li {
             > a {
-                &:after {
-                    transform: rotate(180deg);
-                }
-            }            
-            .nav__submenu {
-                display: block;
+              font-weight: 400;
+              padding: 1rem;
             }
+            &:not(:last-child) {
+              border-bottom: 1px solid $red;
+            }
+          }
         }
+
+        &:not(:first-child) {
+          border-left: 1px solid #aa1438;
+        }
+      }
+    }
+
+    .nav__submenu {
+      position: absolute;
+      background: $darkred;
+      max-width: 15rem;
+      z-index: 99;
+    }
+    .item--has-submenu {
+      &.menu--open {
+        > a {
+          text-decoration: underline;
+        }
+      }
+    }
+    .item--contact {
+      display: none;
+    }
+    .item--search {
+      .block-search {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint_mobile) {
+    text-align: center;
+
+    &:not(.menu--open) {
+      display: none;
+    }
+
+    background: $darkred;
+
+    > .nav__list {
+      a {
+        font-size: 1.125em;
+        padding: 1rem;
+        color: #fff;
+      }
+
+      > li {
+        &:not(:last-child) {
+          border-bottom: 1px solid $red;
+        }
+      }
+    }
+    .nav__submenu {
+      background: #ba0f37;
+      a {
+        font-size: 1em;
+      }
+      li {
+        &:not(:last-child) {
+          border-bottom: 1px solid #d8214c;
+        }
+      }
     }
 
     .item--search {
-        > a {
-            display: flex;
-            align-items: center;
-
-            .ui-ico {
-                height: 1rem;
-            }
-        }
-
-        @media (max-width: $breakpoint_laptop_big) and (min-width: $breakpoint_mobile + 1px) {
-            .ui-ico {
-                margin: 0;
-            }
-            .label {
-                display: none;
-            }
-        }
+      > a {
+        display: none;
+      }
     }
-
-    
-    @media (min-width: $breakpoint_mobile + 1px) {
-
-        > ul {
-            display: flex;
-
-            > li {
-
-                > a {
-                    padding: 2rem 1rem;
-
-                    @media (min-width: $breakpoint_hd + 1px) {
-                        padding: 2rem 1.5rem;
-                    }
-                }
-
-                > .submenu__list {
-                    > li {
-                        > a {
-                            font-weight: 400;
-                            padding: 1rem;
-                        }
-                        &:not(:last-child) {
-                            border-bottom: 1px solid $red;
-                        }
-                    }
-                }
-
-                &:not(:first-child) {
-                    border-left: 1px solid #aa1438;
-                }
-            }
-        }
-
-        .nav__submenu {
-            position: absolute;
-            background: $darkred;
-            max-width: 15rem;
-            z-index: 99;   
-
-        }
-        .item--has-submenu {
-            &.menu--open {
-                > a {
-                    text-decoration: underline;
-                }
-            }
-        }
-        .item--contact {
-            display: none;
-        }
-        .item--search {
-            .block-search {
-                display: none;
-            }
-        }
-
-    }
-
-
-
-    @media (max-width: $breakpoint_mobile) {
-
-        text-align: center;
-
-        &:not(.menu--open) {
-            display: none;
-        }
-
-        background: $darkred;
-
-
-
-        > .nav__list {
-
-            a {
-                font-size: 1.125em;
-                padding: 1rem;
-                color: #fff;
-            }
-
-
-            > li {
-                &:not(:last-child) {
-                    border-bottom: 1px solid $red;
-                }
-            }
-        }
-        .nav__submenu {
-            background: #BA0F37;
-            a {
-                font-size: 1em;
-            }
-            li {
-                &:not(:last-child) {
-                    border-bottom: 1px solid #d8214c;
-                }
-            }
-        }
-
-        .item--search {
-            > a {
-                display: none;
-            }
-        }
-
-
-    }
-
+  }
 }

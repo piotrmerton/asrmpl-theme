@@ -1,51 +1,46 @@
 .breadcrumbs {
-
-    @media all and (max-width: $breakpoint_mobile) {
-        display: none;
-    }
-    color: #999;
-    margin-bottom: 2rem;
+  @media all and (max-width: $breakpoint_mobile) {
+    display: none;
+  }
+  color: #999;
+  margin-bottom: 2rem;
 }
 .breadcrumbs__list {
-    li {
+  li {
+    display: inline-block;
+    font-size: 0.875em;
 
-        display: inline-block;
-        font-size: .875em;
-        
-        a {
-            display: inline-block;
-            color: #999;
-            &:after {
-                display: none;
-            }
-        }
- 
-        &:not(:last-child) {
-            &:after {
-                content: '/';
-                display: inline-block;
-                margin: 0 .5rem;
-                color: $text_silver;            
-            }
-        }
-
-        &.item--start {
-            margin-right: .5rem;
-            &:after {
-                display: none;
-            }
-        }
-
-        &:last-child {
-            a {
-                
-                pointer-events: none;
-                &:after {
-                display: none;
-                }
-            }
-        }
- 
- 
+    a {
+      display: inline-block;
+      color: #999;
+      &:after {
+        display: none;
+      }
     }
+
+    &:not(:last-child) {
+      &:after {
+        content: "/";
+        display: inline-block;
+        margin: 0 0.5rem;
+        color: $text_silver;
+      }
+    }
+
+    &.item--start {
+      margin-right: 0.5rem;
+      &:after {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      a {
+        pointer-events: none;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
 }

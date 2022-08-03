@@ -1,57 +1,55 @@
 form {
-    input,
-    select,
-    textarea {
-        font-family: 'Inter', sans-serif;
-        font-size: 1.125em;
-        font-weight: 400;
-        color: $text_silver;
-        padding: 1rem;
-        
-        border: 3px solid #e2e2e2;
+  input,
+  select,
+  textarea {
+    font-family: "Inter", sans-serif;
+    font-size: 1.125em;
+    font-weight: 400;
+    color: $text_silver;
+    padding: 1rem;
+
+    border: 3px solid #e2e2e2;
+  }
+
+  input[type="text"],
+  textarea {
+    appearance: none;
+  }
+
+  button,
+  input[type="submit"] {
+    font-size: 1em;
+    background: $yellow;
+    padding: 0 2rem;
+    min-height: 3rem;
+    border-radius: 2rem;
+    color: $black;
+    font-weight: 600;
+    border: 0;
+    width: 100%;
+
+    cursor: pointer;
+
+    @media (max-width: $breakpoint_phone-big) {
+      font-size: 0.875em;
+
+      min-height: 2.5rem;
     }
 
-    input[type=text],
-    textarea {
-        appearance: none;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 
-    button,
-    input[type=submit] {
-        
-        font-size: 1em;
-        background: $yellow;
-        padding: 0 2rem;
-        min-height: 3rem;
-        border-radius: 2rem;
-        color: $black;
-        font-weight: 600; 
-        border: 0;
-        width: 100%;
+  select {
+    font-size: 1em;
+    border-width: 2px;
+    padding: 0.5rem;
 
-        cursor: pointer;
-
-        @media (max-width: $breakpoint_phone-big) {
-            font-size: .875em;
-            
-            min-height: 2.5rem;
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+    @media (max-width: $breakpoint_mobile) {
+      font-size: 0.875em;
     }
-
-    select {
-        font-size: 1em;
-        border-width: 2px;
-        padding: .5rem;
-
-        @media (max-width: $breakpoint_mobile) {
-            font-size: .875em;
-        }
-    }
-
+  }
 }

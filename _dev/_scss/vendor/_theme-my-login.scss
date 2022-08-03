@@ -1,76 +1,76 @@
 //theme-my-login
 
-@import '../utilities/variables';
+@import "../utilities/variables";
 
 .tml-label {
-    color: $text_silver;
-    font-weight: 400;
-    font-size: .875em;    
+  color: $text_silver;
+  font-weight: 400;
+  font-size: 0.875em;
 }
 
 .tml-avatar-wrap {
-    padding: .5rem 1rem;
-    border: 3px solid #e2e2e2;
+  padding: 0.5rem 1rem;
+  border: 3px solid #e2e2e2;
 
-    .tml-label {
-        font-size: 1.125em;
-    }
+  .tml-label {
+    font-size: 1.125em;
+  }
 
-    .tml-sublabel {
-        font-size: .875em;
-        line-height: 1.5;
-        color: $text_silver_light;
-    }
+  .tml-sublabel {
+    font-size: 0.875em;
+    line-height: 1.5;
+    color: $text_silver_light;
+  }
 
-    input {
-        padding: 0;
-        border: 0;
-    }
-    img {
-        max-width: 10rem;
-        height: auto;
-    }
+  input {
+    padding: 0;
+    border: 0;
+  }
+  img {
+    max-width: 10rem;
+    height: auto;
+  }
 
-    .tml-description {
-        font-style: normal !important;
-        
-        a {
-            display: block;
-            margin: .5rem 0;
-            font-weight: 400;
-            text-decoration: underline;
-        }
+  .tml-description {
+    font-style: normal !important;
+
+    a {
+      display: block;
+      margin: 0.5rem 0;
+      font-weight: 400;
+      text-decoration: underline;
     }
+  }
 }
 
 .tml-indicator_hint-wrap,
 .tml-indicator-wrap {
-    display: none;
+  display: none;
 }
 
 .tml-field-wrap {
-    .description {
-        font-weight: 400;
-        font-size: .875em;
-        color: $text_silver_light;
-    }
+  .description {
+    font-weight: 400;
+    font-size: 0.875em;
+    color: $text_silver_light;
+  }
 }
 .tml-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    a {
-        font-weight: 400;
-    }
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  a {
+    font-weight: 400;
+  }
 }
 
 .tml-disclaimer-wrap {
-    p {
-        line-height: 1.5;
+  p {
+    line-height: 1.5;
 
-        a {
-            text-decoration: underline;
-            color: $black;
-        }
+    a {
+      text-decoration: underline;
+      color: $black;
     }
+  }
 }

@@ -1,66 +1,56 @@
 .playerstats__competition {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
 
+  dl {
     display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    flex-basis: 10rem;
 
+    dt {
+      order: 2;
+      font-size: 1.125em;
+      color: $black;
+      max-width: 8rem;
+    }
+    dd {
+      order: 1;
+      font-size: 5.5em;
+      width: 100%;
+      line-height: 1;
+      color: $yellow;
+      letter-spacing: -0.125rem;
+    }
+
+    &:nth-child(even) {
+      dd {
+        color: $red;
+      }
+    }
+
+    // &:not(:first-child) {
+    //     border-left: 1px solid #E2E2E2;
+    // }
+  }
+
+  @media (max-width: $breakpoint_mobile) {
     dl {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        font-weight: 600;
-        flex-basis: 10rem;
-        
-
-        dt {
-            order: 2;
-            font-size: 1.125em;
-            color: $black;
-            max-width: 8rem;
-            
-
-        }
-        dd {
-            order: 1;
-            font-size: 5.5em;
-            width: 100%;
-            line-height: 1;
-            color: $yellow;
-            letter-spacing: -.125rem;
-            
-            
-        }
-
-        &:nth-child(even) {
-            dd {
-                color: $red
-            }
-        }
-
-        // &:not(:first-child) {
-        //     border-left: 1px solid #E2E2E2;
-        // }
-
+      dt {
+        font-size: 1em;
+      }
+      dd {
+        font-size: 4em;
+      }
     }
+  }
 
-    @media (max-width: $breakpoint_mobile) {
-        dl {
-            dt {
-                font-size: 1em;
-            }
-            dd {
-                font-size: 4em;
-            }
-        }
-    }
-
-    @media (max-width: $breakpoint_phone-big) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1rem;
-    }
-
-
+  @media (max-width: $breakpoint_phone-big) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
 }

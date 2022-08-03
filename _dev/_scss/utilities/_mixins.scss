@@ -1,64 +1,67 @@
 // CSS triangle for nav.scss component
 @mixin submenu-indicator($size, $color) {
-    content: '';
-    display: block;
-    width: 0; 
-    height: 0; 
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-    border-top: $size solid $color;	
-    transition: all .2s ease-in-out;		
-    position: relative;
-    margin-left: .5rem;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  margin-left: 0.5rem;
 }
 
 @mixin image-overlay() {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:rgba(22, 22, 22, .05);
-    z-index: 10;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 22, 22, 0.05);
+  z-index: 10;
 }
 
 @mixin sticky($offset) {
-    position: -webkit-sticky; //https://developer.mozilla.org/en-US/docs/Web/CSS/position
-    position: sticky;
-    top: $offset;
+  position: -webkit-sticky; //https://developer.mozilla.org/en-US/docs/Web/CSS/position
+  position: sticky;
+  top: $offset;
 }
 
 @mixin triangle-right($size, $color) {
-    content: '';
-    display: inline-block;
-    width: 0; 
-    height: 0; 
-    border-top: $size solid transparent;
-    border-bottom: $size solid transparent;
-    border-left: $size solid $color;  
-    position: relative;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+  position: relative;
 }
 
 @mixin dot($size, $color) {
-    content: '';
-    display: block;
-    width: $size;
-    height: $size;
-    border-radius: 50%;
-    background: $color;
-    margin-right: 1rem;
-    flex-shrink: 0;
+  content: "";
+  display: block;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: $color;
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
-
 @mixin bar-with-gradient() {
-    content: '';
-    display: block;
-    width: 100%;
-    height: .2rem;
-    margin-top: .75rem;
-    background: rgb(250,172,47);
-    background: linear-gradient(90deg, rgba(250,172,47,1) 0%, rgba(127,8,36,1) 100%);  
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  margin-top: 0.75rem;
+  background: rgb(250, 172, 47);
+  background: linear-gradient(
+    90deg,
+    rgba(250, 172, 47, 1) 0%,
+    rgba(127, 8, 36, 1) 100%
+  );
 }

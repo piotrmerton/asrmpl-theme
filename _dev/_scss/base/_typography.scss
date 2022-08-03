@@ -2,49 +2,48 @@ h1,
 h2,
 h3,
 h4 {
-    
-    font-family: 'Inter', sans-serif;
-    font-weight: 600; //semi-bold
-    color: $black;
+  font-family: "Inter", sans-serif;
+  font-weight: 600; //semi-bold
+  color: $black;
 
-    &:not(.header--no-margin) {
-        margin-bottom: 2rem;
-    }
+  &:not(.header--no-margin) {
+    margin-bottom: 2rem;
+  }
 }
 
 h1 {
-    font-size: 3.5em;
-    max-width: 66rem;
+  font-size: 3.5em;
+  max-width: 66rem;
 
-    @media (max-width: $breakpoint_mobile) {
-        font-size: 3em;
-    }
-    @media (max-width: $breakpoint_phone_big) {
-        font-size: 2em;
-    }
+  @media (max-width: $breakpoint_mobile) {
+    font-size: 3em;
+  }
+  @media (max-width: $breakpoint_phone_big) {
+    font-size: 2em;
+  }
 }
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 
-    @media (max-width: $breakpoint_phone_big) {
-        font-size: 1.5em;
-    }
+  @media (max-width: $breakpoint_phone_big) {
+    font-size: 1.5em;
+  }
 }
 h3 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 h4 {
-    font-size: 1.125em;
-    font-weight: 600;
+  font-size: 1.125em;
+  font-weight: 600;
 }
 
 p {
-    line-height: 2;
-    margin-bottom: 1rem;
+  line-height: 2;
+  margin-bottom: 1rem;
 }
 
 .header--with-border {
-    &::after {
-        @include bar-with-gradient();
-    }
+  &::after {
+    @include bar-with-gradient();
+  }
 }

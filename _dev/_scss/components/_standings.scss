@@ -1,122 +1,117 @@
 .standings-table {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-    th {
-        text-align: center;
+  th {
+    text-align: center;
+  }
+
+  td {
+    font-size: 1.25em;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .position {
+    max-width: 2rem;
+    text-align: center;
+  }
+
+  .team {
+    max-width: 10rem;
+  }
+
+  .wins,
+  .draws,
+  .loses {
+    max-width: 4rem;
+    text-align: center;
+  }
+
+  td {
+    &.points {
+      color: $black;
+      font-weight: 600;
     }
+  }
 
+  tr {
+    &:nth-child(-n + 4) {
+      td {
+        &:first-child {
+          border-left: 0.25rem solid cornflowerblue;
+        }
+      }
+    }
+    &:nth-child(5) {
+      td {
+        &:first-child {
+          border-left: 0.25rem solid darkorange;
+        }
+      }
+    }
+    &:nth-child(6) {
+      td {
+        &:first-child {
+          border-left: 0.25rem solid darkgreen;
+        }
+      }
+    }
+    &:nth-child(n + 18) {
+      td {
+        &:first-child {
+          border-left: 0.25rem solid darkred;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint_mobile + 1px) {
+    .label--mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint_mobile) {
     td {
-        font-size: 1.25em;
-        text-align: center;
-        padding: .5rem;
+      font-size: 1em;
     }
-
+    .label--desktop {
+      display: none;
+    }
     .position {
-        max-width: 2rem;
-        text-align: center;
+      max-width: 1.5rem;
     }
-
-    .team {
-        max-width: 10rem;
+    .goal_diff {
+      display: none;
     }
-
-    .wins,
-    .draws,
-    .loses {
-        max-width: 4rem;
-        text-align: center;
-    }
-
-    td {
-        &.points {
-            color: $black;
-            font-weight: 600;
-        }
-    }
-
-    tr {
-        &:nth-child(-n+4) {
-            td {
-                &:first-child {
-                    border-left: .25rem solid cornflowerblue;
-                }
-            }
-        }
-        &:nth-child(5) {
-            td {
-                &:first-child {
-                    border-left: .25rem solid darkorange;
-                }
-            }            
-        }
-        &:nth-child(6) {
-            td {
-                &:first-child {
-                    border-left: .25rem solid darkgreen;
-                }
-            }
-        }        
-        &:nth-child(n+18) {
-            td {
-                &:first-child {
-                    border-left: .25rem solid darkred;
-                }
-            }
-        }
-    }
-
-
-    @media (min-width: $breakpoint_mobile + 1px) {
-        .label--mobile {
-            display: none;
-        }
-    }
-
-    @media (max-width: $breakpoint_mobile) {
-
-        td {
-            font-size: 1em;
-        }        
-        .label--desktop {
-            display: none;
-        }
-        .position {
-            max-width: 1.5rem;
-        }
-        .goal_diff {
-            display: none;
-        }
-
-    }
-
-
+  }
 }
 
 .standings-legend {
-    h3 {
-        margin-bottom: 1rem;
+  h3 {
+    margin-bottom: 1rem;
+  }
+  ul {
+    li {
+      padding-left: 1rem;
+      font-size: 1em;
+      font-weight: 400;
+      line-height: 1.5;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
     }
-    ul {
-        li {
-            padding-left: 1rem;
-            font-size: 1em;
-            font-weight: 400;
-            line-height: 1.5;
-            &:not(:last-child) {
-                margin-bottom: .5rem;
-            }
-        }
-        .ucl {
-            border-left: .25rem solid cornflowerblue;
-        } 
-        .uel {
-            border-left: .25rem solid darkorange;
-        }
-        .uecl {
-            border-left: .25rem solid darkgreen;
-        }
-        .rel {
-            border-left: .25rem solid darkred;
-        }          
-    }           
+    .ucl {
+      border-left: 0.25rem solid cornflowerblue;
+    }
+    .uel {
+      border-left: 0.25rem solid darkorange;
+    }
+    .uecl {
+      border-left: 0.25rem solid darkgreen;
+    }
+    .rel {
+      border-left: 0.25rem solid darkred;
+    }
+  }
 }

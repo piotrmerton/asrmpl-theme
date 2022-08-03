@@ -1,90 +1,85 @@
 .ui-competition {
+  .tabs__nav {
+    ul {
+      display: flex;
 
-    .tabs__nav {
-        ul {
-            display: flex;
+      > li {
+        width: 50%;
+        font-size: 1.125em;
+        background: $silver;
 
-            > li {
-                width: 50%;
-                font-size: 1.125em;
-                background: $silver;
-                
-                text-align: center;
+        text-align: center;
 
-                
-                a {
-                    display: block;
-                    padding: 1.5rem 1rem;
-                    color: #A2A2A2;
-                }
-            }
+        a {
+          display: block;
+          padding: 1.5rem 1rem;
+          color: #a2a2a2;
         }
-
-        .tab--active {
-            background: #fff;
-
-            a {
-                font-weight: 500;
-                color: $black;
-                pointer-events: none;
-            }
-        }
+      }
     }
 
-    .tabs__list {
-        padding: 1rem 2rem;
+    .tab--active {
+      background: #fff;
+
+      a {
+        font-weight: 500;
+        color: $black;
+        pointer-events: none;
+      }
     }
+  }
 
+  .tabs__list {
+    padding: 1rem 2rem;
+  }
 
-    table {
-        td {
-            padding: .25rem;
-            &:first-child {
-                padding-left: .5rem;
-            }
-            &:last-child {
-                font-weight: 600;
-                color: $black;
-            }            
-        }
+  table {
+    td {
+      padding: 0.25rem;
+      &:first-child {
+        padding-left: 0.5rem;
+      }
+      &:last-child {
+        font-weight: 600;
+        color: $black;
+      }
     }
+  }
 
-    .table__standings {
-
-        td {
-            &:first-child {
-                text-align: center;
-                max-width: 1rem;
-            }
-        }
+  .table__standings {
+    td {
+      &:first-child {
+        text-align: center;
+        max-width: 1rem;
+      }
     }
+  }
 
-    @media (max-width: $breakpoint_hd) and (min-width: $breakpoint_desktop + 1px),
+  @media (max-width: $breakpoint_hd) and (min-width: $breakpoint_desktop + 1px),
     (max-width: $breakpoint_phone-big) {
-        .table__standings {
-            .team {
-                > div {
-                    justify-content: center;
-                }
-                img {
-                    margin: 0;
-                }
-                span {
-                    display: none;
-                }
-            }
+    .table__standings {
+      .team {
+        > div {
+          justify-content: center;
         }
+        img {
+          margin: 0;
+        }
+        span {
+          display: none;
+        }
+      }
     }
+  }
 
-    @media (max-width: $breakpoint_mobile) {
-        .tabs__list {
-            padding: 1rem;
-        }
-        .table__standings {
-            td {
-                font-size: .875em;
-            }
-        }
+  @media (max-width: $breakpoint_mobile) {
+    .tabs__list {
+      padding: 1rem;
     }
-
+    .table__standings {
+      td {
+        font-size: 0.875em;
+      }
+    }
+  }
 }

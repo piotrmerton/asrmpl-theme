@@ -1,131 +1,114 @@
-import { UI } from '../ui';
+import { UI } from "../ui";
 
 export let nav = {
+  //selectors
+  headerSelector: "#header-top",
+  navSelector: ".nav--top",
+  buttonSelector: ".do-toggle-nav",
 
-	//selectors
-	headerSelector : '#header-top',
-    navSelector : '.nav--top',
-    buttonSelector : '.do-toggle-nav',
+  //classes
+  submenuClass: "submenu__list",
+  hasSubmenuClass: "item--has-submenu",
+  openClass: "menu--open",
 
-    //classes
-    submenuClass: 'submenu__list',	
-    hasSubmenuClass : 'item--has-submenu',
-    openClass : 'menu--open',
+  bind: function () {
+    let header = document.querySelector(this.headerSelector);
+    let nav = document.querySelector(this.navSelector);
+    let button = document.querySelector(this.buttonSelector);
 
-    bind : function() {
+    /*
+     *	1. bind menu UI button
+     */
+    if (button === null) return;
 
-		let header = document.querySelector(this.headerSelector);
-        let nav = document.querySelector(this.navSelector);
-        let button = document.querySelector(this.buttonSelector);
+    button.addEventListener("click", (event) => {
+      this.toggleMenu();
+      event.preventDefault();
+    });
 
-		/* 
-		 *	1. bind menu UI button
-		 */
-		if(button === null) return;
+    /*
+     *	2. bind navigation links with different logic regarding submenu based
+     *	on current viewport width
+     */
+    if (nav === null) return;
 
-		button.addEventListener('click', (event) => {
-			this.toggleMenu();
-			event.preventDefault();
-		});        
+    let navLinks = nav.querySelectorAll("a");
 
-		/* 
-		 *	2. bind navigation links with different logic regarding submenu based
-		 *	on current viewport width
-		 */
-		if(nav === null) return;
+    navLinks.forEach((item) => {
+      let li = item.parentNode;
 
-		let navLinks = nav.querySelectorAll('a');
+      if (li.classList.contains(this.hasSubmenuClass)) {
+        //bind event to <a>
+        item.addEventListener("click", (event) => {
+          if (UI.windowWidth <= 960) {
+            this.toggleSubmenu(li);
+            event.preventDefault();
+          } else if (UI.windowWidth > 960) {
+            //on desktop toggle submenu only for highest level (not submenu)
+            if (!li.closest("ul").classList.contains(this.submenuClass)) {
+              this.toggleSubmenu(li);
+              event.preventDefault();
+            }
+          }
+        });
+      }
+    });
 
-		navLinks.forEach( (item) => {
+    //close menu by clicking anywhere...
+    document.addEventListener("click", (event) => {
+      if (UI.mobile || UI.windowWidth < 960) return;
+      this.resetMenu();
+    });
 
-            let li = item.parentNode;
-			
-			if( li.classList.contains(this.hasSubmenuClass) ) {
+    //...but not on header itself
+    header.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  },
 
-				//bind event to <a>
-				item.addEventListener('click', (event) => {
+  /**
+   * toggle mobile menu
+   */
+  toggleMenu: function () {
+    let menu = document.querySelector(this.navSelector);
+    let button = document.querySelector(this.buttonSelector);
 
-					if( UI.windowWidth <= 960 ) {
-						this.toggleSubmenu(li);											
-                        event.preventDefault();
-                        
-					} else if ( UI.windowWidth > 960  ) {
-						
-						//on desktop toggle submenu only for highest level (not submenu)	
-						if(!li.closest('ul').classList.contains(this.submenuClass)) {
-							this.toggleSubmenu(li);
-							event.preventDefault();
-						}
-					}
-				});				
+    menu.classList.toggle(this.openClass);
+    button.classList.toggle(this.openClass);
+  },
 
-			}				
+  toggleSubmenu: function (el) {
+    let parent = el.parentNode;
+    let openClass = this.openClass;
 
-		});	     
-		
-		//close menu by clicking anywhere...
-		document.addEventListener('click', (event) => {
-			if( UI.mobile || UI.windowWidth < 960 ) return;
-			this.resetMenu();
-		});
+    //select siblings based on current <li>
+    let siblings = Array.prototype.filter.call(
+      parent.children,
+      function (child) {
+        return child !== el;
+      }
+    );
 
-		//...but not on header itself 
-		header.addEventListener('click', (event) => {
-			event.stopPropagation();
-		});
+    //remove open class from siblings
+    siblings.forEach(function (sibling) {
+      sibling.classList.remove(openClass);
+    });
 
-    },
+    // toggle open class
+    el.classList.toggle(openClass);
+  },
 
-	/**
-	 * toggle mobile menu
-	 */
-    toggleMenu : function() {
+  resetMenu: function () {
+    let menu = document.querySelector(this.navSelector);
+    let button = document.querySelector(this.buttonSelector);
 
-        let menu = document.querySelector(this.navSelector);
-        let button = document.querySelector(this.buttonSelector);
+    menu.classList.remove(this.openClass);
+    button.classList.remove(this.openClass);
 
-        menu.classList.toggle(this.openClass);
-        button.classList.toggle(this.openClass);
+    let openMenuItems = menu.querySelectorAll("." + this.openClass);
 
-    },
-
-	toggleSubmenu : function (el) {
-
-		let parent = el.parentNode;
-		let openClass = this.openClass;
-
-		//select siblings based on current <li>
-		let siblings = Array.prototype.filter.call(parent.children, function(child){
-			return child !== el;
-		});			
-
-		//remove open class from siblings
-		siblings.forEach( function(sibling) {
-			sibling.classList.remove(openClass);
-		});
-
-        // toggle open class
-        el.classList.toggle(openClass);
-	
-
-	},
-
-	resetMenu : function() {
-
-        let menu = document.querySelector(this.navSelector);
-        let button = document.querySelector(this.buttonSelector);
-
-        menu.classList.remove(this.openClass);
-		button.classList.remove(this.openClass);
-		
-		let openMenuItems = menu.querySelectorAll('.'+this.openClass);
-
-		openMenuItems.forEach( (item) => {
-			item.classList.remove(this.openClass);
-		});
-
-
-	},
-
-
-}
+    openMenuItems.forEach((item) => {
+      item.classList.remove(this.openClass);
+    });
+  },
+};

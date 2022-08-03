@@ -1,257 +1,270 @@
-@import '../utilities/variables';
+@import "../utilities/variables";
 
 .text--rich {
-    .onyx-poll {
-        border: 1px solid $silver;
-        padding: 2rem;
-    }
+  .onyx-poll {
+    border: 1px solid $silver;
+    padding: 2rem;
+  }
 }
 
 .onyx-poll {
+  --choicePercentage: 100%;
+  --choiceResult: "";
 
-	--choicePercentage: 100%;
-	--choiceResult: "";
-
-	position: relative;
-	pointer-events: none;
-	opacity: 0;
-	text-align: left;
+  position: relative;
+  pointer-events: none;
+  opacity: 0;
+  text-align: left;
 }
 .onyx-poll.show {
-	opacity: 1;
+  opacity: 1;
 }
 .onyx-poll.active {
-	pointer-events: all;
+  pointer-events: all;
 }
 
 .onyx-poll-wrapper {
-	transition: all 300ms ease;;
+  transition: all 300ms ease;
 }
 
 /* QUESTION */
 p.onyx-poll-question {
-	width: 100%;
-    font-size: 1.125em;
-	font-weight: 600;
-    color: $black;
-    line-height: 1.5;
-
+  width: 100%;
+  font-size: 1.125em;
+  font-weight: 600;
+  color: $black;
+  line-height: 1.5;
 }
 .onyx-poll-modal p.onyx-poll-question {
-	width: calc(100% - 30px);
+  width: calc(100% - 30px);
 }
 
 /* CHOICES */
 ul.onyx-poll-choices {
-    padding: 0;
-    margin-bottom: 1rem;
+  padding: 0;
+  margin-bottom: 1rem;
 
-	li {
-        cursor: pointer;
-        position: relative;
-        width: 100%;
-        font-size: 1em;
-        font-weight: 400;
-        color: $black;
-        padding: .75rem 1rem;
+  li {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 400;
+    color: $black;
+    padding: 0.75rem 1rem;
 
-        margin: 0 0 .75rem 0;
+    margin: 0 0 0.75rem 0;
 
-        overflow: hidden;
-        display: flex;
-        align-items: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 
-        &.choosed {
-            font-weight: 600;
-        }
-
-        .image {
-            display: none;
-        }
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: $breakpoint_hd) and (min-width: $breakpoint_mobile + 1px) {
-            font-size: .875em;
-        }
+    &.choosed {
+      font-weight: 600;
     }
+
+    .image {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $breakpoint_hd) and (min-width: $breakpoint_mobile + 1px) {
+      font-size: 0.875em;
+    }
+  }
 }
 
 .onyx-poll-choice {
-    border: 1px solid $silver;
+  border: 1px solid $silver;
 }
 .onyx-poll {
-    &:not(.view) {
-        .onyx-poll-choice {
-            &:hover {
-                text-decoration: underline;
-                background: $silver;
-            }            
-        }
+  &:not(.view) {
+    .onyx-poll-choice {
+      &:hover {
+        text-decoration: underline;
+        background: $silver;
+      }
     }
+  }
 }
-
 
 .onyx-poll-choices li span.answer {
-	position: relative;
-	pointer-events: none;  /* need to fix this: issue #8 */
-	z-index: 1;
-	width: 100%;
+  position: relative;
+  pointer-events: none; /* need to fix this: issue #8 */
+  z-index: 1;
+  width: 100%;
 
-    font-size: 1em;
+  font-size: 1em;
 }
-
 
 /* FOOTER */
 .onyx-poll-footer {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* view results/vote buttons */
 .onyx-poll-ft-btn {
-
-	margin-left: auto;
-    font-weight: 400;
-    text-decoration: underline;
-    
+  margin-left: auto;
+  font-weight: 400;
+  text-decoration: underline;
 }
 
-.onyx-poll-vote { display: none; }
-.onyx-poll.view .onyx-poll-vote { display: block; }
-.onyx-poll.view .onyx-poll-view { display: none; }
-.onyx-poll.voted .onyx-poll-vote { display: none !important; }
+.onyx-poll-vote {
+  display: none;
+}
+.onyx-poll.view .onyx-poll-vote {
+  display: block;
+}
+.onyx-poll.view .onyx-poll-view {
+  display: none;
+}
+.onyx-poll.voted .onyx-poll-vote {
+  display: none !important;
+}
 
 /* message / total */
 .onyx-poll-message,
-.onyx-poll-total { display: none; margin: 0; }
-.onyx-poll.voted .onyx-poll-message { display: block; }
-.onyx-poll.view .onyx-poll-total { display: block; }
-.onyx-poll-message.success { color: #155724; }
-.onyx-poll-message.error { color: #FF554E; }
+.onyx-poll-total {
+  display: none;
+  margin: 0;
+}
+.onyx-poll.voted .onyx-poll-message {
+  display: block;
+}
+.onyx-poll.view .onyx-poll-total {
+  display: block;
+}
+.onyx-poll-message.success {
+  color: #155724;
+}
+.onyx-poll-message.error {
+  color: #ff554e;
+}
 .onyx-poll-message.warn,
 .onyx-poll-message.not_allowed,
-.onyx-poll-invalid { color: #856404; }
+.onyx-poll-invalid {
+  color: #856404;
+}
 
 p.onyx-poll-total {
-    font-size: .875em;
+  font-size: 0.875em;
+  font-weight: 400;
+  color: #c5c5c5;
+  margin: 0;
+
+  strong {
     font-weight: 400;
-    color: #C5C5C5;
-    margin: 0;
-    
-    strong {
-        font-weight: 400;
-        color: #C5C5C5;
-    }
+    color: #c5c5c5;
+  }
 }
 
 /* LOADER */
 .onyx-poll.loading .onyx-poll-wrapper {
-	opacity: .3;
+  opacity: 0.3;
 }
 .onyx-poll.loading .onyx-poll-loader {
-	opacity: 1;
+  opacity: 1;
 }
 .onyx-poll-loader {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate3d(-50%, -50%, 0) scale(.5);
-	opacity: 0;
-	transition: all 300ms ease;
-	pointer-events: none;;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(0.5);
+  opacity: 0;
+  transition: all 300ms ease;
+  pointer-events: none;
 }
 .onyx-poll-loader .spinner,
 .onyx-poll-loader .spinner:after {
-	border-radius: 50%;
-	width: 10em;
-	height: 10em;
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
 }
-.onyx-poll-loader  .spinner {
-	position: relative;
-	display: block;
-	font-size: 10px;
-	text-indent: -9999em;
-	border-top: 1.1em solid var(--loaderBorderColor);
-	border-right: 1.1em solid var(--loaderBorderColor);
-	border-bottom: 1.1em solid var(--loaderBorderColor);
-	border-left: 1.1em solid var(--loaderBG);
-	transform: translateZ(0);
-	animation: load8 1.1s infinite linear;
+.onyx-poll-loader .spinner {
+  position: relative;
+  display: block;
+  font-size: 10px;
+  text-indent: -9999em;
+  border-top: 1.1em solid var(--loaderBorderColor);
+  border-right: 1.1em solid var(--loaderBorderColor);
+  border-bottom: 1.1em solid var(--loaderBorderColor);
+  border-left: 1.1em solid var(--loaderBG);
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
 }
 @-webkit-keyframes load8 {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 @keyframes load8 {
-	0% {
-		-webkit-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 /* VIEW RESULTS */
 .onyx-poll.view .onyx-poll-choices li {
-	cursor: auto;
+  cursor: auto;
 }
 .onyx-poll.view .onyx-poll-choices li:before,
 .onyx-poll.view .onyx-poll-choices li:after {
-	display: block;
-	opacity: 1;
-	transition: all 600ms ease;
-	transform: none;
+  display: block;
+  opacity: 1;
+  transition: all 600ms ease;
+  transform: none;
 }
 
 .onyx-poll-choices li {
+  &::after {
+    content: var(--choiceResult);
+    display: none;
+    text-align: right;
+    width: 100%;
+    max-width: 140px;
+    position: relative;
+    margin-left: auto;
+    font-weight: bold;
+  }
 
-    &::after {
-        content: var(--choiceResult);
-        display: none;
-        text-align: right;
-        width: 100%;
-        max-width: 140px;
-        position: relative;
-        margin-left: auto;
-        font-weight: bold;        
-    }
+  &::before {
+    opacity: 0.6;
+    content: "";
+    display: block;
 
+    width: 100%;
+    width: var(--choicePercentage);
+
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #ededed;
+    border-radius: 1rem;
+
+    /* z-index: -1; */
+    transition: all 100ms ease;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  &.choosed {
     &::before {
-        opacity: .6;
-        content: "";
-        display: block;
-    
-        width: 100%;
-        width: var(--choicePercentage);
-    
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    
-        background-color: #EDEDED;
-        border-radius: 1rem;
-    
-        /* z-index: -1; */
-        transition: all 100ms ease;
-        transform: translate3d(-100%, 0, 0);
+      background-color: $yellow;
     }
-
-    &.choosed {
-        &::before {
-            background-color: $yellow;
-        }
-    }
-
+  }
 }

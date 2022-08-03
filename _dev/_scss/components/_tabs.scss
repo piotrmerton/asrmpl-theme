@@ -1,102 +1,92 @@
 .ui-tabs {
-    .tabs__nav {
-
-        .nav__item {
-
-            &.tab--active {
-                font-weight: bold;
-            }
-
-        }
-    
+  .tabs__nav {
+    .nav__item {
+      &.tab--active {
+        font-weight: bold;
+      }
     }
+  }
 
-
-    .tabs__list {
-        .item--tab {
-            &:not(.tab--active) {
-                display: none;
-            }
-            .tab__title {
-                display: none;
-            }
-        }
-    }   
-
+  .tabs__list {
     .item--tab {
-        &.tab--active {
-            .title__ui {
-                .ui--open {
-                    display: none;
-                }
-            }
+      &:not(.tab--active) {
+        display: none;
+      }
+      .tab__title {
+        display: none;
+      }
+    }
+  }
+
+  .item--tab {
+    &.tab--active {
+      .title__ui {
+        .ui--open {
+          display: none;
         }
-        &:not(.tab--active) {
-            .title__ui {
-                .ui--close {
-                    display: none;
-                }
-            }            
-        }        
+      }
+    }
+    &:not(.tab--active) {
+      .title__ui {
+        .ui--close {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.tabs--playerstats {
+    .nav__list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .nav__item {
+      a {
+        display: flex;
+        align-items: center;
+        font-size: 0.875em;
+      }
+      img {
+        width: auto;
+        height: 3rem;
+        margin-right: 0.5rem;
+      }
+      .label {
+        max-width: 10rem;
+      }
+
+      &:not(.tab--active) {
+        a {
+          color: #8b8b8b;
+        }
+        img {
+          filter: grayscale(1);
+          opacity: 0.5;
+        }
+      }
     }
 
-    &.tabs--playerstats {
-        .nav__list {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        .nav__item {
-            a {
-                display: flex;
-                align-items: center;
-                font-size: .875em;
-            }
-            img {
-                width: auto;
-                height: 3rem;
-                margin-right: .5rem;
-            }
-            .label {
-                max-width: 10rem;
-            }
-
-            &:not(.tab--active) {
-                a {
-                    color: #8B8B8B;
-                }
-                img {
-                    filter: grayscale(1);
-                    opacity: .5;
-                }
-            }
-        }
-
-        @media (max-width: $breakpoint_mobile) {
-
-
-        }
-
-        @media (max-width: $breakpoint_phone-big) {
-            .nav__list {
-                gap: 3rem;
-            }
-            .nav__item {
-                a {
-                    display: grid;
-                    justify-content: center;
-                }
-                img {
-                    height: 5rem;
-                    margin: 0;
-                }
-                span {
-                    display: none;
-                }
-            }
-
-        }
+    @media (max-width: $breakpoint_mobile) {
     }
 
-
+    @media (max-width: $breakpoint_phone-big) {
+      .nav__list {
+        gap: 3rem;
+      }
+      .nav__item {
+        a {
+          display: grid;
+          justify-content: center;
+        }
+        img {
+          height: 5rem;
+          margin: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+  }
 }
